@@ -64,6 +64,9 @@
     <ClInclude Include="AbstractFactory.h">
       <Filter>Example\Abstract</Filter>
     </ClInclude>
+    <ClInclude Include="Maze.h">
+      <Filter>Example\Abstract</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildFrm.cpp">
@@ -103,6 +106,9 @@
       <Filter>Example</Filter>
     </ClCompile>
     <ClCompile Include="AbstractFactory.cpp">
+      <Filter>Example\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="Maze.cpp">
       <Filter>Example\Abstract</Filter>
     </ClCompile>
   </ItemGroup>
