@@ -35,3 +35,13 @@ std::shared_ptr<Maze> MazeGame::CreateMaze(MazeFactory & factory)
 
 	return nullptr;
 }
+
+std::shared_ptr<Room> EnchantedMazeFactory::MakeRoom(int n) const
+{
+	return std::shared_ptr<Room>();
+}
+
+std::shared_ptr<Door> EnchantedMazeFactory::MakeDoor(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2) const
+{
+	return std::shared_ptr<Door>();
+}
