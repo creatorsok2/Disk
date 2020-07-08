@@ -1,6 +1,9 @@
 #pragma once
 
 enum class Direction { North, South, East, West, Num };
+
+#pragma region BASE
+
 class MapSite
 {
 public:
@@ -74,4 +77,35 @@ public:
 
 private:
 	std::unordered_map<int, std::shared_ptr<Room>> m_mRoom;
+};
+
+#pragma endregion
+
+class EnchantedRoom : public Room
+{
+public:
+	EnchantedRoom(int RoomNo);
+	virtual ~EnchantedRoom() = default;
+};
+
+class DoorNeedingSpell : public Door
+{
+public:
+	DoorNeedingSpell(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2);
+	virtual ~DoorNeedingSpell() = default;
+};
+
+class BombedWall : public Wall
+{
+public:
+	BombedWall() = default;
+	virtual ~BombedWall() = default;
+};
+
+class RoomWithABomb : public Room
+{
+public:
+	RoomWithABomb(int RoomNo = 0);
+	virtual ~RoomWithABomb() = default;
+
 };

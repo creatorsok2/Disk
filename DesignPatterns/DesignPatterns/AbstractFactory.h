@@ -26,9 +26,21 @@ public:
 	virtual std::shared_ptr<Door> MakeDoor(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2) const;
 };
 
+class BombedMazeFactory : public MazeFactory
+{
+public:
+	BombedMazeFactory() = default;
+	virtual ~BombedMazeFactory() = default;
+
+public:
+	virtual std::shared_ptr<Wall> MakeWall() const;
+	virtual std::shared_ptr<Room> MakeRoom(int n) const;
+
+};
+
 class MazeGame
 {
 public:
-	std::shared_ptr<Maze> CreateMaze(MazeFactory& factory);
+	std::shared_ptr<Maze> CreateMaze(const MazeFactory& factory);
 		
 };

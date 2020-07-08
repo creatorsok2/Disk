@@ -67,3 +67,18 @@ std::weak_ptr<Room> Maze::RoomNo(int RoomNo) const
 
 	return std::shared_ptr<Room>();
 }
+
+EnchantedRoom::EnchantedRoom(int RoomNo)
+	: Room(RoomNo)
+{
+}
+
+DoorNeedingSpell::DoorNeedingSpell(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2)
+	: Door(r1, r2)
+{
+}
+
+RoomWithABomb::RoomWithABomb(int RoomNo)
+	: Room(RoomNo)
+{
+}
