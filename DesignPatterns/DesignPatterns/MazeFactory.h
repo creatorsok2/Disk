@@ -37,10 +37,3 @@ public:
 	virtual std::shared_ptr<Room> MakeRoom(int n) const;
 
 };
-
-class MazeGame
-{
-public:
-	std::shared_ptr<Maze> CreateMaze(const MazeFactory& factory);
-		
-};

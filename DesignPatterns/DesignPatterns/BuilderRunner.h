@@ -2,6 +2,7 @@
 
 class BuilderRunner
 {
+public:
 	static void Main();
 };
 

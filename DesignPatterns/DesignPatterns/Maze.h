@@ -73,7 +73,7 @@ public:
 
 public:
 	void AddRoom(std::shared_ptr<Room>);
-	std::weak_ptr<Room> RoomNo(int) const;
+	std::shared_ptr<Room> RoomNo(int) const;
 
 private:
 	std::unordered_map<int, std::shared_ptr<Room>> m_mRoom;

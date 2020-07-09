@@ -4,15 +4,21 @@
     <Filter Include="Example">
       <UniqueIdentifier>{af39996e-3736-48eb-9250-cb24ce19829e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Example\Abstract">
-      <UniqueIdentifier>{30d4971e-38db-4110-bdf2-4cef2b3e61bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include=".Main">
       <UniqueIdentifier>{74fe0537-2731-4cd2-a03d-ac02255c2108}</UniqueIdentifier>
     </Filter>
     <Filter Include=".Resource File">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Example\AbstractFactory">
+      <UniqueIdentifier>{30d4971e-38db-4110-bdf2-4cef2b3e61bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Builder">
+      <UniqueIdentifier>{1b924387-4b30-4baa-bf9a-4292edda8282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Maze">
+      <UniqueIdentifier>{e07e7365-6530-4aa6-bdf7-6bfea8b78fc1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,14 +67,23 @@
     <ClInclude Include="TestRunner.h">
       <Filter>Example</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractFactory.h">
-      <Filter>Example\Abstract</Filter>
+    <ClInclude Include="AbstractRunner.h">
+      <Filter>Example\AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeBuilder.h">
+      <Filter>Example\Builder</Filter>
+    </ClInclude>
+    <ClInclude Include="BuilderRunner.h">
+      <Filter>Example\Builder</Filter>
     </ClInclude>
     <ClInclude Include="Maze.h">
-      <Filter>Example\Abstract</Filter>
+      <Filter>Example\Maze</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractRunner.h">
-      <Filter>Example\Abstract</Filter>
+    <ClInclude Include="MazeGame.h">
+      <Filter>Example\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeFactory.h">
+      <Filter>Example\AbstractFactory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -108,14 +123,23 @@
     <ClCompile Include="TestRunner.cpp">
       <Filter>Example</Filter>
     </ClCompile>
-    <ClCompile Include="AbstractFactory.cpp">
-      <Filter>Example\Abstract</Filter>
+    <ClCompile Include="AbstractRunner.cpp">
+      <Filter>Example\AbstractFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeBuilder.cpp">
+      <Filter>Example\Builder</Filter>
+    </ClCompile>
+    <ClCompile Include="BuilderRunner.cpp">
+      <Filter>Example\Builder</Filter>
     </ClCompile>
     <ClCompile Include="Maze.cpp">
-      <Filter>Example\Abstract</Filter>
+      <Filter>Example\Maze</Filter>
     </ClCompile>
-    <ClCompile Include="AbstractRunner.cpp">
-      <Filter>Example\Abstract</Filter>
+    <ClCompile Include="MazeGame.cpp">
+      <Filter>Example\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeFactory.cpp">
+      <Filter>Example\AbstractFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "AbstractFactory.h"
+#include "MazeFactory.h"
 
 std::shared_ptr<Maze> MazeFactory::MakeMaze() const
 {
@@ -39,29 +39,4 @@ std::shared_ptr<Wall> BombedMazeFactory::MakeWall() const
 std::shared_ptr<Room> BombedMazeFactory::MakeRoom(int n) const
 {
 	return std::make_shared<RoomWithABomb>(n);
-}
-
-//////////////////////////////////////////////////////////////////////////
-
-std::shared_ptr<Maze> MazeGame::CreateMaze(const MazeFactory & factory)
-{
-	auto aMaze = factory.MakeMaze();
-	auto r1 = factory.MakeRoom(1);
-	auto r2 = factory.MakeRoom(2);
-	auto aDoor = factory.MakeDoor(r1, r2);
-
-	aMaze->AddRoom(r1);
-	aMaze->AddRoom(r2);
-
-	r1->SetSide(Direction::North, factory.MakeWall());
-	r1->SetSide(Direction::South, factory.MakeWall());
-	r1->SetSide(Direction::East, aDoor);
-	r1->SetSide(Direction::West, factory.MakeWall());
-
-	r2->SetSide(Direction::North, factory.MakeWall());
-	r2->SetSide(Direction::South, factory.MakeWall());
-	r2->SetSide(Direction::East, factory.MakeWall());
-	r2->SetSide(Direction::West, aDoor);
-
-	return aMaze;
 }

@@ -59,13 +59,10 @@ void Maze::AddRoom(std::shared_ptr<Room> room)
 		m_mRoom.emplace(RoomNo, room);
 }
 
-std::weak_ptr<Room> Maze::RoomNo(int RoomNo) const
+std::shared_ptr<Room> Maze::RoomNo(int RoomNo) const
 {
 	auto itr = m_mRoom.find(RoomNo);
-	if (itr != m_mRoom.cend())
-		return itr->second;
-
-	return std::shared_ptr<Room>();
+	return itr != m_mRoom.cend() ? itr->second : nullptr;
 }
 
 EnchantedRoom::EnchantedRoom(int RoomNo)
