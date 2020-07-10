@@ -20,6 +20,9 @@
     <Filter Include="Example\Maze">
       <UniqueIdentifier>{e07e7365-6530-4aa6-bdf7-6bfea8b78fc1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Example\Prototype">
+      <UniqueIdentifier>{17a65947-32fe-4c02-b2ff-b8980940391d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChildFrm.h">
@@ -70,9 +73,6 @@
     <ClInclude Include="AbstractRunner.h">
       <Filter>Example\AbstractFactory</Filter>
     </ClInclude>
-    <ClInclude Include="MazeBuilder.h">
-      <Filter>Example\Builder</Filter>
-    </ClInclude>
     <ClInclude Include="BuilderRunner.h">
       <Filter>Example\Builder</Filter>
     </ClInclude>
@@ -82,8 +82,14 @@
     <ClInclude Include="MazeGame.h">
       <Filter>Example\Maze</Filter>
     </ClInclude>
+    <ClInclude Include="MazeBuilder.h">
+      <Filter>Example\Maze</Filter>
+    </ClInclude>
     <ClInclude Include="MazeFactory.h">
-      <Filter>Example\AbstractFactory</Filter>
+      <Filter>Example\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeRunner.h">
+      <Filter>Example\Prototype</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,9 +132,6 @@
     <ClCompile Include="AbstractRunner.cpp">
       <Filter>Example\AbstractFactory</Filter>
     </ClCompile>
-    <ClCompile Include="MazeBuilder.cpp">
-      <Filter>Example\Builder</Filter>
-    </ClCompile>
     <ClCompile Include="BuilderRunner.cpp">
       <Filter>Example\Builder</Filter>
     </ClCompile>
@@ -138,8 +141,14 @@
     <ClCompile Include="MazeGame.cpp">
       <Filter>Example\Maze</Filter>
     </ClCompile>
+    <ClCompile Include="MazeBuilder.cpp">
+      <Filter>Example\Maze</Filter>
+    </ClCompile>
     <ClCompile Include="MazeFactory.cpp">
-      <Filter>Example\AbstractFactory</Filter>
+      <Filter>Example\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="PrototypeRunner.cpp">
+      <Filter>Example\Prototype</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

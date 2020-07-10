@@ -16,6 +16,11 @@ void Room::Enter()
 	TRACE(_T("Room::Enter"));
 }
 
+std::shared_ptr<MapSite> Room::Clone() const
+{
+	return std::make_shared<Room>(*this);
+}
+
 int Room::GetRoomNo()
 {
 	return m_RoomNo;
@@ -36,6 +41,11 @@ void Wall::Enter()
 	TRACE(_T("Wall::Enter"));
 }
 
+std::shared_ptr<MapSite> Wall::Clone() const
+{
+	return std::make_shared<Wall>(*this);
+}
+
 Door::Door(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2)
 	: m_r1(r1), m_r2(r2)
 {
@@ -46,9 +56,15 @@ void Door::Enter()
 	TRACE(_T("Door::Enter"));
 }
 
-std::weak_ptr<Room> Door::OtherSideFrom(std::weak_ptr<Room>)
+std::shared_ptr<MapSite> Door::Clone() const
 {
-	return std::weak_ptr<Room>();
+	return std::make_shared<Door>(*this);
+}
+
+void Door::Initialize(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2)
+{
+	m_r1 = r1;
+	m_r2 = r2;
 }
 
 void Maze::AddRoom(std::shared_ptr<Room> room)
@@ -70,12 +86,32 @@ EnchantedRoom::EnchantedRoom(int RoomNo)
 {
 }
 
+std::shared_ptr<MapSite> EnchantedRoom::Clone() const
+{
+	return std::make_shared<EnchantedRoom>(*this);
+}
+
 DoorNeedingSpell::DoorNeedingSpell(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2)
 	: Door(r1, r2)
 {
 }
 
+std::shared_ptr<MapSite> DoorNeedingSpell::Clone() const
+{
+	return std::make_shared<DoorNeedingSpell>(*this);
+}
+
 RoomWithABomb::RoomWithABomb(int RoomNo)
 	: Room(RoomNo)
 {
+}
+
+std::shared_ptr<MapSite> RoomWithABomb::Clone() const
+{
+	return std::make_shared<RoomWithABomb>(*this);
+}
+
+std::shared_ptr<MapSite> BombedWall::Clone() const
+{
+	return std::make_shared<BombedWall>(*this);
 }

@@ -40,3 +40,21 @@ std::shared_ptr<Room> BombedMazeFactory::MakeRoom(int n) const
 {
 	return std::make_shared<RoomWithABomb>(n);
 }
+
+MazePrototypeFactory::MazePrototypeFactory(std::shared_ptr<Maze> m, std::shared_ptr<Wall> w, std::shared_ptr<Room> r, std::shared_ptr<Door> d)
+	: _prototypeMaze(m), _prototypeWall(w), _prototypeRoom(r), _prototypeDoor(d)
+{
+}
+
+std::shared_ptr<Wall> MazePrototypeFactory::MakeWall() const
+{
+	return std::static_pointer_cast<Wall>(_prototypeWall->Clone());
+}
+
+std::shared_ptr<Door> MazePrototypeFactory::MakeDoor(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2) const
+{
+	auto aDoor = std::static_pointer_cast<Door>(_prototypeDoor->Clone());
+	aDoor->Initialize(r1, r2);
+
+	return aDoor;
+}
