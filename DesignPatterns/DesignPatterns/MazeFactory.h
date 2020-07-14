@@ -56,3 +56,15 @@ private:
 	std::shared_ptr<Door> _prototypeDoor = nullptr;
 
 };
+
+class MazeSingletonFactory : public MazeFactory
+{
+public:
+	static MazeSingletonFactory* Instance();
+
+protected:
+	MazeSingletonFactory() = default;
+
+private:
+	static std::unique_ptr<MazeSingletonFactory> _instance;
+};

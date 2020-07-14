@@ -58,3 +58,13 @@ std::shared_ptr<Door> MazePrototypeFactory::MakeDoor(std::shared_ptr<Room> r1, s
 
 	return aDoor;
 }
+
+std::unique_ptr<MazeSingletonFactory> MazeSingletonFactory::_instance = nullptr;
+
+MazeSingletonFactory * MazeSingletonFactory::Instance()
+{
+	if (_instance == nullptr)
+		_instance = std::make_unique<MazeSingletonFactory>();
+
+	return _instance.get();
+}
