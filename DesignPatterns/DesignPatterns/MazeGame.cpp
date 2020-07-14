@@ -37,7 +37,7 @@ std::shared_ptr<Maze> MazeGame::CreateMaze(MazeBuilder & builder)
 	return builder.GetMaze();
 }
 
-std::shared_ptr<Maze> MazeGame::CreateComplexMaze(MazeBuilder & builder)
+std::shared_ptr<Maze> MazeGame::CreateComplexMaze(MazeBuilder & )
 {
 	return std::shared_ptr<Maze>();
 }
