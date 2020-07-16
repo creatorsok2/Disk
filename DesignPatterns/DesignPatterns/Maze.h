@@ -56,16 +56,14 @@ class Door : public MapSite
 {
 public:
 	Door() = default;
-	Door(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2);
 	Door(const Door&) = default;
+	Door(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2);	
 	virtual ~Door() = default;
 
 public:
-	virtual void Enter();
 	virtual std::shared_ptr<MapSite> Clone() const override;
-
-public:
-	void Initialize(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2);
+	virtual void Initialize(std::shared_ptr<Room> r1, std::shared_ptr<Room> r2);
+	virtual void Enter();
 
 protected:
 	std::shared_ptr<Room> m_r1 = nullptr;
@@ -124,6 +122,12 @@ public:
 
 public:
 	virtual std::shared_ptr<MapSite> Clone() const override;
+
+public:
+	bool HasBomb() { return m_bBomb; }
+
+private:
+	bool m_bBomb = false;
 };
 
 class RoomWithABomb : public Room
