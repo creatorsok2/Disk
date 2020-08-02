@@ -4,7 +4,7 @@
 
 #pragma once
 
-
+class CSDIDoc;
 class CSDIView : public CView
 {
 protected: // serialization에서만 만들어집니다.

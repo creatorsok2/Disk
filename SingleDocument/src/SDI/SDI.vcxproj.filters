@@ -26,6 +26,9 @@
     <Filter Include="DesignPatterns\Prototype">
       <UniqueIdentifier>{56d2a761-f231-4ecd-b1e6-d9e243b7faac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\FormView">
+      <UniqueIdentifier>{efdf1a13-927a-4d9e-a63e-bbd7cb23eaad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDI.h">
@@ -44,9 +47,6 @@
       <Filter>__General__</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>__General__</Filter>
-    </ClInclude>
-    <ClInclude Include="MainFrm.h">
       <Filter>__General__</Filter>
     </ClInclude>
     <ClInclude Include="OutputWnd.h">
@@ -91,6 +91,12 @@
     <ClInclude Include="TestRunner.h">
       <Filter>DesignPatterns</Filter>
     </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="StringListView.h">
+      <Filter>Main\FormView</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDIDoc.cpp">
@@ -106,9 +112,6 @@
       <Filter>__General__</Filter>
     </ClCompile>
     <ClCompile Include="FileView.cpp">
-      <Filter>__General__</Filter>
-    </ClCompile>
-    <ClCompile Include="MainFrm.cpp">
       <Filter>__General__</Filter>
     </ClCompile>
     <ClCompile Include="OutputWnd.cpp">
@@ -146,6 +149,12 @@
     </ClCompile>
     <ClCompile Include="TestRunner.cpp">
       <Filter>DesignPatterns</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="StringListView.cpp">
+      <Filter>Main\FormView</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,8 @@
 #include "SDI.h"
 
 #include "MainFrm.h"
+#include "SDIView.h"
+#include "StringListView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -27,6 +29,8 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWndEx)
 	ON_COMMAND_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_WINDOWS_7, &CMainFrame::OnApplicationLook)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_WINDOWS_7, &CMainFrame::OnUpdateApplicationLook)
 	ON_WM_SETTINGCHANGE()
+	ON_COMMAND_RANGE(ID_VIEW_DRAW, ID_VIEW_FORMVIEW, &CMainFrame::OnViewStyle)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_VIEW_DRAW, ID_VIEW_FORMVIEW, &CMainFrame::OnUpdateViewStyle)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -43,6 +47,7 @@ CMainFrame::CMainFrame() noexcept
 {
 	// TODO: 여기에 멤버 초기화 코드를 추가합니다.
 	theApp.m_nAppLook = theApp.GetInt(_T("ApplicationLook"), ID_VIEW_APPLOOK_OFF_2007_SILVER);
+	m_nViewStyle = ID_VIEW_DRAW;
 }
 
 CMainFrame::~CMainFrame()
@@ -405,4 +410,56 @@ void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 {
 	CFrameWndEx::OnSettingChange(uFlags, lpszSection);
 	m_wndOutput.UpdateFonts();
+}
+
+void CMainFrame::OnViewStyle(UINT id)
+{
+	if (id == m_nViewStyle)
+		return;  // already selected
+
+	// Set the child window ID of the active view to AFX_IDW_PANE_FIRST.
+	// This is necessary so that CFrameWnd::RecalcLayout will allocate
+	// this "first pane" to that portion of the frame window's client
+	// area not allocated to control bars.  Set the child ID of
+	// the previously active view to some other ID; we will use the
+	// command ID as the child ID.
+	CView* pOldActiveView = GetActiveView();
+	::SetWindowLong(pOldActiveView->m_hWnd, GWL_ID, id);
+
+
+	CWaitCursor wait;
+	CRuntimeClass* pNewViewClass = nullptr;
+	switch (id)
+	{
+	case ID_VIEW_DRAW:
+		pNewViewClass = RUNTIME_CLASS(CSDIView);
+		break;
+	case ID_VIEW_FORMVIEW:
+		pNewViewClass = RUNTIME_CLASS(CStringListView);
+		break;
+	}
+
+	// create the new view
+	CCreateContext context;
+	context.m_pNewViewClass = pNewViewClass;
+	context.m_pCurrentDoc = GetActiveDocument();
+	CView* pNewView = STATIC_DOWNCAST(CView, CreateView(&context));
+	if (pNewView != NULL)
+	{
+		// the new view is there, but invisible and not active...
+		pNewView->ShowWindow(SW_SHOW);
+		pNewView->OnInitialUpdate();
+		SetActiveView(pNewView);
+		RecalcLayout();
+
+		m_nViewStyle = id;
+
+		// finally destroy the old view...
+		pOldActiveView->DestroyWindow();
+	}
+}
+
+void CMainFrame::OnUpdateViewStyle(CCmdUI * pCmdUI)
+{
+	pCmdUI->SetRadio(m_nViewStyle == pCmdUI->m_nID);
 }
