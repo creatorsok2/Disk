@@ -26,6 +26,9 @@
 *.a
 *.lib
 
+# Folder 
+.vs
+
 # Executables
 *.exe
 *.out
@@ -33,5 +36,5 @@
 *.pdb
 *.ilk
 *.idb
-DesignPatterns/.vs
-DesignPatterns/DesignPatterns/x64
+*.tlog
+*.log

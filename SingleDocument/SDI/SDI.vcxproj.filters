@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="__General__">
+      <UniqueIdentifier>{fb672dd3-44ff-4fa3-9953-394d2998e872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__Resource File__">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{5e616fd0-6610-4d79-af88-4cc65b9b322e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SDI.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SDIDoc.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SDIView.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassView.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="FileView.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputWnd.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesWnd.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTree.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SDIDoc.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SDIView.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SDI.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassView.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="FileView.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputWnd.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTree.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SDI.rc">
+      <Filter>__Resource File__</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\file_view.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\file_view_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\class_view.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\class_view_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\fileview.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\fileview_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\classview.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\classview_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\explorer.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\explorer_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\sort.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\sort_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\menuimages.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\menuimages_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\output_wnd.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\output_wnd_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties_wnd.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties_wnd_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\userimages.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\SDIDoc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\SDI.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SDI.rc2">
+      <Filter>__Resource File__</Filter>
+    </None>
+  </ItemGroup>
+</Project>
