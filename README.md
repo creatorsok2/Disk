@@ -1,1 +1,3 @@
-# MyExample
+# MFC Example
+- DesignPatterns
+- SingleDocument TestProject
