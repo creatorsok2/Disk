@@ -28,6 +28,7 @@
 
 # Folder 
 .vs
+temp
 
 # Executables
 *.exe
@@ -38,3 +39,5 @@
 *.idb
 *.tlog
 *.log
+*.ipdb
+*.iobj

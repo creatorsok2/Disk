@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="__General__">
+      <UniqueIdentifier>{fb672dd3-44ff-4fa3-9953-394d2998e872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__Resource File__">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{5e616fd0-6610-4d79-af88-4cc65b9b322e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DesignPatterns">
+      <UniqueIdentifier>{296e72cc-8d16-49bd-94a3-25dd7a30c004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DesignPatterns\AbstractFactory">
+      <UniqueIdentifier>{a78afc10-85ea-4bda-aebd-20d0ee88561c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DesignPatterns\Builder">
+      <UniqueIdentifier>{25675525-f896-43c1-858e-0bd91dee0206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DesignPatterns\Maze">
+      <UniqueIdentifier>{65d4c8d5-42c8-462d-9d0b-362948348b19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DesignPatterns\Prototype">
+      <UniqueIdentifier>{56d2a761-f231-4ecd-b1e6-d9e243b7faac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SDI.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SDIDoc.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SDIView.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassView.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="FileView.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputWnd.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesWnd.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTree.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractRunner.h">
+      <Filter>DesignPatterns\AbstractFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="BuilderRunner.h">
+      <Filter>DesignPatterns\Builder</Filter>
+    </ClInclude>
+    <ClInclude Include="Maze.h">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeBuilder.h">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeFactory.h">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeGame.h">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeRunner.h">
+      <Filter>DesignPatterns\Prototype</Filter>
+    </ClInclude>
+    <ClInclude Include="TestRunner.h">
+      <Filter>DesignPatterns</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SDIDoc.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SDIView.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SDI.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassView.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="FileView.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputWnd.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTree.cpp">
+      <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractRunner.cpp">
+      <Filter>DesignPatterns\AbstractFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="BuilderRunner.cpp">
+      <Filter>DesignPatterns\Builder</Filter>
+    </ClCompile>
+    <ClCompile Include="Maze.cpp">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeBuilder.cpp">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeFactory.cpp">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeGame.cpp">
+      <Filter>DesignPatterns\Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="PrototypeRunner.cpp">
+      <Filter>DesignPatterns\Prototype</Filter>
+    </ClCompile>
+    <ClCompile Include="TestRunner.cpp">
+      <Filter>DesignPatterns</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SDI.rc">
+      <Filter>__Resource File__</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\file_view.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\file_view_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\class_view.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\class_view_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\fileview.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\fileview_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\classview.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\classview_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\explorer.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\explorer_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\sort.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\sort_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\menuimages.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\menuimages_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\output_wnd.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\output_wnd_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties_wnd.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties_wnd_hc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\properties_hc.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\userimages.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\SDIDoc.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\SDI.ico">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>__Resource File__</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SDI.rc2">
+      <Filter>__Resource File__</Filter>
+    </None>
+  </ItemGroup>
+</Project>
