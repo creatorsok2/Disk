@@ -1,6 +1,31 @@
-# Docker 따라하기
-## Docker 참조문서
-https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client
+# Docker for Linux
+## linux 환경 설정 
+- VirtualBox 를 이용하여 Ubuntu 설치 
+    - Ubuntu 설치, [Download](https://ubuntu.com/download/desktop)
+    - Hyper-V 옵션 비활성화, [Microsoft Docs](https://docs.microsoft.com/ko-kr/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)
+    ```sh
+    # Hyper-V 옵션 상태
+    dism.exe /Online /Get-FeatureInfo:Microsoft-Hyper-V
+    # Hyper-V 옵션 켜기
+    dism.exe /Online /Enable-Feature:Microsoft-Hyper-V
+    # Hyper-V 옵션 끄기
+    dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+    ```
+## linux 명령어/단축키 
+- **ctrl + alt + t** : 터미널 실행
+- docker 설치 
+```sh
+# 관리자 권한
+sudo -i
+# docker 설치
+apt install docker.io
+# os 재시작, ubuntu update 가 background 에서 돌아가고 있을 os 재시작 후 설치 가능 
+reboot
+```
+
+# Docker for Windows
+## 참고문서
+- Docker for Window, [Microsoft Docs](https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)
 
 ## Docker 실행 
 1. Docker Desktop 을 실행 
@@ -12,7 +37,7 @@ https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/quick-start/se
 ## Docker Command 
 - & .\CIM.exe -cli TEST.xml : cim 에서 cli 모드로 test 실행 
 
-# Dockerfile 작성 
+## Dockerfile 작성 
 원하는 텍스트 편집기를 사용하여 Dockerfile을 연 후 다음 콘텐츠를 추가합니다. 
 
 ```Dockerfile
@@ -29,5 +54,14 @@ RUN dotnet restore
 
 ```Dockerfile
 COPY . ./
-RUN dotnet publish -c Release -o out
+RUN dotnet publish -c Release -o out 
+```
+
+# Docker Tutorial 
+```Dockerfile
+# 원하는 이미지 검색
+docker search tomcat 
+
+# Tomcat 설치 및 실행 
+docker run -d -p 8080:8080 --name tc consol/tomcat-7.0
 ```
