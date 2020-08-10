@@ -65,9 +65,9 @@ RUN dotnet publish -c Release -o out
 - VMs : Hyper-v 기능을 사용해서 하드웨어를 추상화 시켜서 가성화를 구현한다.  
 - Containter : 리눅스 컨트롤 그룹(cgroup), 리눅스 네임스페이스를 사용하여 가상화를 구현한다.
 
-![Containers vs. VMs](.\docker-vm-container.png)
+![Containers vs. VMs](image\docker-vm-container.png)
 
-![Monolith vs. Microservices](.\microservices.png)
+![Monolith vs. Microservices](image\microservices.png)
 
 ## 도커(Docker)
 - 컨테이너 기술을 지원하는 다양한 프로젝트 중에 하나
@@ -103,7 +103,7 @@ RUN dotnet publish -c Release -o out
 도커 레지스트리에는 사용자가 사용할 수 있도록 데이터베이스를 통해 Image를 제공해주고 있음  
 누구나 이미지를 만들어 푸시할 수 있으며 푸시된 이미지는 다른 사람들에게 공유 가능 
 
-![Basic taxonomy in Docker](taxonomy-of-docker-terms-and-concepts.png)
+![Basic taxonomy in Docker](image\taxonomy-of-docker-terms-and-concepts.png)
 
 # Docker 이미지 검색 
 Docker Hub 에서 이미지 검색 하거나 **docker search** 를 이용하여 검색하면 된다.
@@ -118,7 +118,7 @@ docker pull mysql
 ```
 
 # 도커 라이프 사이클 이해하기 
-![life cycle](.\life-cycle.png)
+![life cycle](image\life-cycle.png)
 
 ```sh
 # 도커 이미지 다운로드와 삭제
@@ -139,7 +139,7 @@ sudo docker rm <container_name(container_id)>
 ```
 # 이미지 비밀 : 레이어 
 ## 레이어의 개념
-![layer](.\image-layer.png)
+![layer](image\image-layer.png)
 - 이미지를 지운다 하더라도 다른곳에서 사용하고 있는 레이어는 지워지지 않음 
 - 이미 존재하는 레이어는 새로 다운로드 받을 필요가 없음
 ```sh
@@ -259,6 +259,59 @@ chmod 777 <shared_directory>
 ## shared_directory root 권한주기
 ```
 
+# 도커 빌드 
+```sh
+# test_server.py 생성
+gedit test_server.py
+```
+```py
+# test_server.py
+import socket
 
+with socket.socket() as s:
+    s.bind(("0.0.0.0", 12345))
+    s.listen()
+    print("server is started")
+    conn, addr = s.accept()
+    # conn 클라이언트와 통신할 소켓
+    # addr 클라이언트의 정보가 들어있음
+    with conn:
+        print("Connected by", addr)
+        while True:
+            data = conn.recv(1024)
+            if not data: break
+            conn.sendall(data)
+```
+```sh
+# server 실행
+python test_server.py
+# client 실행
+nc 127.0.0.1 12345
+```
+```sh
+# 도커 파일 생성
+mkdir my_first_project
+mv test_server.py ./my_first_project/
+cd my_first_project/
+gedit dockerfile            
+```
+```dockerfile
+# dockerfile
+# python 3.7 image 사용
+FROM python:3.7 
+
+# file 복사
+RUN mkdir /echo # image 빌드할 때 
+COPY test_server.py /echo
+
+# python 실행
+CMD ["python", "/echo/test_server.py"] # container 실행할 때
+```
+```sh
+# 현재 폴더의 dockerfile을 빌드
+docker build -t <tag_name> .
+# server 실행
+docker run -t -p 12345:12345 --name et --rm <tag_name>
+```
 
 
