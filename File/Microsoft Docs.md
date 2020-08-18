@@ -29,6 +29,29 @@
 </HTML>
 ```
 
+# MSBuild
+- build tools download, [Build Tools](https://visualstudio.microsoft.com/ko/visual-cpp-build-tools/)
+- msbuild.exe 환경변수 등록
+```sh
+# path 환경변수 확인 
+path
+
+# path 환경변수 등록(임시)
+set path = %path%;<new_path>
+## new_path : 추가할 경로 
+
+# path 환경변수 등록 
+setx path "%path%;<new_path>"
+## new_path : 추가할 경로 
+
+# msbuild 15.0 등록 
+setx path "%path%;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin"
+```
+- msbuild 를 이용해서 빌드
+```sh
+msbuild.exe "C:\Disk\Share\TEST\SimpleMFC\SimpleMFC.sln" -t:build -p:Configuration=Release;Platform=x64;VisualStudioVersion=15.0
+```
+
 
 
 
