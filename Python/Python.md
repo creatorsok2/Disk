@@ -126,3 +126,60 @@ a # 1
 - int(): 문자형 데이터나 실수 형 데이터를 정수로 변환(실패 시 에러)
 - str(): 각종 데이터를 문자열로 변환
 - float(): 문자형 데이터나 정수형 데이터를 부동소수점으로 변환
+
+## 세트(set) 연습문제
+```py
+a = set('abcdefgh') # {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}
+b = set('cdef') # {'c', 'd', 'e', 'f'}
+c = set('efgh') # {'e', 'f', 'g', 'h'}
+print("a | b : ", a | b) # {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}
+print("a - c : ", a - c) # {'a', 'b', 'c', 'd'}
+print("a & b & c : ", a & b & c) # {'e', 'f'}
+
+a = input("입력 :")
+print(set(a.split()))
+```
+
+## 딕셔너리(dictionary)
+- dict는 딕셔너리의 약자로 값과 속성으로 이루어짐
+- 값은 문자열, 정수, 배열, dict 등 삽입 가능
+- key를 사용하여 value를 인텍스
+- 키는 strings나 number가 될 수 있으나, 변하지 않아야 함
+- 키는 고유한 성질을 가져야 함
+- 정렬되지 않은 key:value 쌍
+- {} 를 활용하여 dictionary를 만들고, 그 안에 :를 사용하여 key와 value를 구분
+- key를 사용하여 value를 저장
+- 딕셔너리의 keys 함수를 사용하면 딕셔너리의 키만 확인
+- 딕셔너리의 values 함수를 사용하면 딕셔너리의 값만 확인
+- 딕셔너리의 items 함수를 사용하면 딕셔너리 전체를 확인
+```py
+a = { 'a' : 'b', 'b': 'e' } # {'a' : 'b', 'b': 'e'}
+a['a'] = 'c' # {'a' : 'c', 'b': 'e'}
+a.keys() # ['a', 'b']
+a.valus() # ['c', 'e']
+a.items() # [('a', 'c'), ('b', 'e')]
+```
+- 전체 내용을 확인하려면 data의 keys를 통해서 내용 확인 가능 
+```py
+for i in a.keys():
+    print(i, ':', a[i])
+```
+
+## 딕셔너리(dictionary) 연습문제
+```py
+a = {'name' : 'john', 
+'phone' : '01012345678',
+'email' : 'test@test.com',
+'birth' : 1111 }
+
+print("name :", a['name']) # john
+
+a['birth'] = 1010
+print("birth :", a['birth']) # 1010
+
+a['city'] = 'seoul'
+print("a :", a) # { 'name' : 'john', 'phone' : '01012345678', 'email' : 'test@test.com', 'birth' : 1010, 'city' : 'seoul' }
+
+del a['email']
+print("a :", a) # { 'name' : 'john', 'phone' : '01012345678', 'birth' : 1010, 'city' : 'seoul' }
+```
