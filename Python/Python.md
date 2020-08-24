@@ -323,4 +323,314 @@ print("a :", a) # { 'name' : 'john', 'phone' : '01012345678', 'birth' : 1010, 'c
 ## JSON 웹 데이터 처리하기
 - IP 주소나 도메인 이름을 위치 정보로 바꿔주는 서비스, [ip-api](https://ip-api.com/docs/api:json)
 - Url을 통해 ip나 도메인 이름을 전달 
-- ex) ip-api.com/json/naver.com
+```sh
+pip install requests # requests lib install
+```
+```py
+import requests
+import json
+
+# http://ip-api.com/json/naver.com
+domain_name = input("domain name :")
+url = 'http://ip-api.com/json/' + domain_name
+req = requests.get(url) # ip 위치 정보 query
+domain_dic = json.loads(req.text) # json parse
+for i in sorted(domain_dic.keys()):
+    print(i, ':', domain_dic[i])
+```
+
+# 파이썬 함수 선언과 활용
+## 함수가 무엇이죠?
+- 첫 번째 집합의 임의의 한 원소를 두 번째 집합의 오직 한 원소에 대응시키는 대응 관계이다. 
+
+## 함수의 리턴이란?
+- 어떤 x 값에 대한 함수의 결과 f(x)에 대한 결과(리턴)
+
+```py
+# a와 b를 삽입하면 두 수를 더한 값을 리턴
+def add(a, b):
+    return a + b
+
+print('add :', add(1, 2)) 
+```
+
+## 파이썬 함수 선언과 활용 연습 문제
+```py
+# 1. 사용자의 입력을 받아 다음과 같은 출력 형태를 갖는 add_num2()를 작성하십시오.
+def add_num2:
+    a = input('input :')
+    a = a.split()
+    b = 0
+    for i in a:
+        b += int(i)
+    
+    return b
+
+print(add_num2())
+
+# 2. IP 주소로 실제 위치 찾기 프로그램을 함수로 만들기
+import requests
+import json
+
+def getlocation(domain):
+    url = 'http://ip-api.com/json/' + domain
+    req = requests.get(url)
+    dic = json.loads(req.text)
+    return dic
+
+url = input('input :')
+dic = getlocation(url)
+for i in dic.keys():
+    print(i, ' : ', dic[i])
+```
+
+# 프로그램 흐름 제어
+## if, elif, else
+- if문은 가장 잘 알려진 프로그래밍 구문
+- if 조건 외에 해당하면 else를 사용하여 프로그램의 흐름을 제어
+- elif를 사용하여 조건을 추가적으로 검사
+- 앞에 있는 if나 elif문에서 조건이 만족하지 않는 경우에만 검사
+- if나 elif에서 조건이 일치하는 경우가 있으면 하위에 있는 elif와 else는 모두 무시
+- else와 elif는 선택적으로 사용가능
+```py
+num = 1
+if num > 0: # 양수 
+    print('+')
+elif num == 0: # 0
+    print('zero')
+else: # 음수
+    print('-')
+```
+
+## 연습문제
+```py
+def robot_action(x):
+    if x == 0:
+        print('우회전')
+    elif x > 1:
+        print('점프')
+    else x < -1:
+        print('유턴')
+    else:
+        print('전진')
+
+x = input('input :')
+robot_action(x)
+```
+## for 루프
+- for 루프는 반복문의 일종
+- 코드가 반복적으로 수행
+- 다른 언어의 for문과 달리 배열이나 문자열 사용하여 실행
+- 숫자를 반복하여 쓰는 것뿐 아니라 list와 string까지도 for문에 사용가능
+- 다음 코드는 list로부터 값을 하나씩 읽어 word라는 변수에 넣어서 for문 안에 있는 print함수를 실행
+```py
+for i in [0, 1, 2, 3, 4]:
+    print(i) # 0 1 2 3 4
+
+for i in 'strings':
+    print(i) # s t r i n g s
+
+for i in ['hello', 'world']
+    print(i) # hello world
+```
+
+## 리스트 생성기 range
+- for문을 만 번 돌리려면 이걸 리스트로 다 만들어야 하나!
+- 사용 형태 : range(시작 숫자, 끝 숫자, 연산할 숫자)
+- 끝 숫자는 생략 불가
+- 시작 숫자와 연산할 숫자는 생략 가능 
+- 시작 숫자를 생략할 시 기본값으로 0으로 지정되고, 연산할 숫자는 1로 지정
+
+```py
+range(10) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+range(1, 10, 2) #[1, 3, 5, 7, 9]
+```
+
+## for 루프 - range 연습문제
+```py
+# 구구단 2단 출력
+for i in range(1, 10):
+    print('{} * {} = {}'.format(2, i, 2 * i))
+
+# 블러그 조회수 올리기 
+import webbrowser # 웹브라우저를 여는 프로그램
+import time # 시간조절
+
+url = input('input :') # naver.com
+webbrowser.open(url) # url open
+time.sleep(2) # sleep 2sec
+```
+
+## 이중 for루프 
+```py
+res = ''
+for i in range(2, 21):
+    res += '{} 단\n'.format(i)
+    for j in range(1, 21):
+        res += '{} * {} = {}\n'.format(i, j, i * j)
+
+print res
+``` 
+
+## 이중 for 루프 연습문제 
+```py
+# 구글 입사 문제 풀어보기
+# 1부터 10,000까지 8이라는 숫자가 총 몇 번 나오는가?
+
+cnt = 0
+for i in range(1, 10001):
+    for j in str(i):
+        if j == '8':
+            cnt += 1
+
+print('Count :', cnt)
+```
+
+## while 루프
+- while문은 for문과 같이 일정한 코드를 반복할 때 사용
+- 사용 형식 : while(조건문)
+- 조건문이 참일 경우에만 구문 실행
+```py
+a = 0
+while(a < 5>):
+    a += 1
+```
+
+## while 루프 - break와 continue, pass
+- break : 구문을 탈출하고자 할 때 사용
+- continue : 아래의 코드를 무시하고 for문을 처음부터 시작할 때 사용
+- pass는 아무런 실행도 원하지 않을 때 정상적인 구문으로 처리 
+- pass도 역시 break와 continue와 같이 while, for, if, 함수, class 등에서 활용 가능
+
+```py
+for a in range(100):
+    if a == 10:
+        continue
+    elif a > 90
+        break
+    else 
+        pass
+
+
+# while 
+a = 0
+while(a < 5): # 1, 2, 3, 4, 5
+    a += 1
+    print(a)
+
+a = 0
+while(True):
+    if a % 2 == 0: # 짝수
+        pass
+    elif a == 100:
+        break
+    else: # 홀수
+        print(a)    
+
+# for
+for i in range(100) # 1, 2, 3 ... 99
+    print(i) 
+```
+
+## while 루프 연습문제
+```py
+while(True):
+    a = input('input :')
+    if a == 'help':
+        print('echo code')
+    elif a == 'quit':
+        b = input('y/n :')
+        if b == 'y':
+            break
+        else:
+            continue 
+    else:
+        a += ' '
+        print(a * 3)
+```
+
+# 파이썬을 활용한 파일 입출력
+
+## 파일 입출력 기본 방법
+- 파일을 입출력하는 것은 프로그래밍의 기본
+- 파일을 입출력할 때 단 세가지만 기억하라
+- 열고 쓰고 닫고, 열고 읽고 닫고
+- 파일 다루기 기본 (읽기에는 'r', 쓰기에는 'w')
+```py
+# 파일 쓰기
+f = open('파일명', 'w')
+f.write('데이터')
+f.close()
+
+# 파일 읽기
+f = open('파일명', 'r')
+a = f.read()
+f.close()
+```
+- 파일에 내용 추가하기 
+- 'add'의 a를 사용
+- 파일의 내용이 바이너리의 경우 binary로 읽도록 b를 추가
+: data의 내용을 바이너리에서 한글로 바꿀 때는 data.decode('cp949')를 실행한다.
+```py
+# 파일 추가 쓰기
+f = open('파일명', 'a')
+f.write('데이터')
+f.close()
+
+# 바이너리 파일 읽기
+f = open('파일명', 'rb')
+a = f.read()
+f.close()
+```
+
+## 상대 경로와 절대 경로
+- 절대 경로: 처음부터 모든 경로의 이름이 적혀있는 경로
+    - 리눅스는 '/'로 시작: /etc/passwd
+    - 윈도우는 '<알파벳>:/'로 시작: c:/windows/notepad.exe
+- 상대 경로: 실행 중인 프로그램 위치에서 바라보는 상대적인 위치
+    - 현재 경로: ./
+    - 상위 경로: ../
+    - 파일명만 있는 경우: "파일명"
+    - './파일명': 현재 경로에 있는 파일명
+    - '../파일명': 상위 경로에 있는 파일명
+    - '../../파일명': 상위 경로의 상위 경로에 있는 파일명
+
+## with를 사용한 파일 읽기 쓰기
+- 파이썬은 사용 후 반드시 제거해야 하는 객체의 경우에는 with를 사용하는 것이 좋음(소켓 등)
+- 파일 핸들의 경우에 닫아주지 않는 상태가 중복되면 메모리 누수(leak)이 발생하여 프로그램이 비정상 종료
+- 파일의 객체를 열어주었다면 반드시 닫아서 메모리 누수가 발생하지 않도록 주의하자
+
+```py
+import os 
+os.getcwd() # 현재 경로
+
+f = open('파일명.txt', 'w')
+f.write('1번\n')
+f.close()
+
+f = open('파일명.txt', 'a')
+f.write('2번\n')
+f.close()
+
+f = open('파일명.txt', 'r')
+print(f.read())
+f.close()
+
+f = open('파일명.txt', 'rb')
+a = f.read()
+print(a.decode('cp949'))
+f.close()
+
+with open('파일명', 'w') as f:
+    f.write('1번\n')
+
+with open('파일명', 'a') as f:
+    f.write('2번\n')
+
+with open('파일명', 'r') as f:
+    a = f.read()    
+
+with open('파일명', 'rb') as f:
+    a = f.read()
+    a.decode('cp949')
+```
