@@ -127,6 +127,129 @@ a # 1
 - str(): 각종 데이터를 문자열로 변환
 - float(): 문자형 데이터나 정수형 데이터를 부동소수점으로 변환
 
+## 연습문제 
+
+```py
+# 다중 문자열을 이용하여 문자출력
+print("""\
+    **
+   *  *
+  *    *
+ *      *
+*        *""");
+
+# 계산기 
+a = int(input("a: = ")) # 2
+b = int(input("b: = ")) # 3
+print("{} + {} = {}".format(a, b, a+b)) # 2 + 3 = 5
+print("a + b = {}".format(int(input("a: = ")) + int(input("b: = ")))) # 한줄로 표현
+```
+
+# 다양한 데이터 타입
+
+## 부울(bool)
+- 논리형식으로 다루는 데이터 
+- 참(True) 와 거짓(False) 두가지
+- bool(x) 함수를 사용하여  True와 False를 리턴
+- x의 값이 0이거나 None(데이터가 없는 경우)인 경우 False
+- 0이 아니거나 데이터가 존재할 경우 True를 반환한다
+- 주로 if, while, for 등의 조건문에서 프로그래머의 가독성을 위하여 사용
+- 데이터가 참인 경우
+    - 데이터가 있는 경우
+    - 0이 아닌 모든 숫자(음수 포함)
+    - 배열에 데이터가 있는 경우
+- 데이터가 거짓인 경우
+    - 데이터가 없거나 0인 경우
+
+## 비교 연산 
+- 데이터를 비교함으로써 참과 거짓을 판별 가능
+- 부등호 사용
+
+## 논리 연사
+- 다수의 부울을 사용해 하나 이상의 논리를 결합하여 복합된 연산을 수행
+
+```py
+bool(1) # True
+bool(-1) # True
+bool(0) # False
+bool(None) # False
+bool([]) # False
+bool(['123']) # True
+
+1 == 2 # False
+1 != 2 # True
+1 >= 2 # False
+1 <- 2 # True 
+
+True and False # False, &
+True or False # True, |
+not True # False, !
+```
+
+## 리스트(list)
+- list는 여러 데이터 타입 중 가장 다양하게 사용
+- list에는 여러 가지 타입을 담을 수 있음
+- [] 형식과 :를 활용하여 데이터 조회
+- in 문법을 사용하면 list 안에 특정 데이터가 있는지 없는지 확인 가능
+- .index를 사용하여 데이터 위치 조회 (없는 경우 에러 출력)
+
+```py
+a = [1, 2, 3, 4, 5] # [1, 2, 3, 4, 5]
+a[-1] # 5
+a[-3:] # [3, 4, 5]
+
+1 in a # True
+8 in a # False
+
+a.index(2) # 1
+```
+- 등호 연산(=)을 활용하여 임의의 list에 숫자를 집어 넣거나 더하기 연산(+)을 활용하여 임의로 list를 추가 
+- 하지만 더하기 연산(+)은 임의적인 추가이기 때문에 a 리스트는 변하지 않음
+- 영구적인 추가를 위해 append 함수 사용
+```py
+a[3] = 100 # [1, 2, 3, 100, 5]
+a + [6, 7, 8] # [1, 2, 3, 100, 5, 6, 7, 8]
+a # [1, 2, 3, 100, 5]
+a.append(6) # [1, 2, 3, 100, 5, 6]
+a.append(7) # [1, 2, 3, 100, 5, 6, 7]
+```
+- split : 문자열을 전달을 원하는 단위로 잘라서 리스트로 반환
+```py
+str = "Hello World Python"
+str.split(' ') # ['Hello', 'World', 'Python']
+```
+
+## 연습문제 
+```py
+a = [1, 2, 3, 'string'] # list 생성
+a += ['a', 'b', 'c', 1, 2, 3] # list 추가
+a[1:4] # list 1~3 조회
+a.index('string') # list index 
+a.count(1) # list find count
+
+a = "i love you, john!" # 문자열
+a = a.split(' ') # 문자열 list로 변경
+a.index('john!') # list index
+len(a) # list 사이즈
+```
+
+## 튜플(tuple)
+- 튜플은 리스트와 다르게 서로 다른 형식의 데이터를 집합으로 생성 가능 
+```py
+tp1 = 1, 2, 3 #(1, 2, 3)
+tp2 = tp1, ('a', 'b', 'c') # ((1, 2, 3), ('a', 'b', 'c'))
+```
+- 튜플의 요소는 변조하거나 삭제 불가
+- 새로운 값을 넣으려 하면 오류 구문 출력
+- 하지만 튜플은 가변하는 list는 포함 가능
+
+## 세트(set)
+- 중복된 요소가 없는 정렬되지 않은 집합
+- 기본적으로 멤버를 검사하고 중복 항목을 제거
+- union, intersection, difference, symmetric difference 와 같은 수학적 연산 지원
+- 중괄호나 set() 함수를 사용하여 set을 생성
+- 리스트 [], 튜플 (), 세트 {}
+
 ## 세트(set) 연습문제
 ```py
 a = set('abcdefgh') # {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}
@@ -138,6 +261,18 @@ print("a & b & c : ", a & b & c) # {'e', 'f'}
 
 a = input("입력 :")
 print(set(a.split()))
+
+# 집합연산
+a = set('1234567') # { '1', '2', '3', '4', '5', '6', '7' }
+b = set('4567890') # { '4', '5', '6', '7', '8', '9', '0' }
+a | b # {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'} 합집합
+a - b # {'1', '2', '3'} 차집합
+a & b # {'4', '5', '6', '7'} 교집합
+a ^ b # {'1', '2', '3', '8', '9', '0'} xor
+
+c = list(a | b)
+c.sort() # list 정렬
+sorted(c) # list 정렬
 ```
 
 ## 딕셔너리(dictionary)
@@ -183,3 +318,9 @@ print("a :", a) # { 'name' : 'john', 'phone' : '01012345678', 'email' : 'test@te
 del a['email']
 print("a :", a) # { 'name' : 'john', 'phone' : '01012345678', 'birth' : 1010, 'city' : 'seoul' }
 ```
+
+# 파이썬에서 존재하는 다양한 데이터 형
+## JSON 웹 데이터 처리하기
+- IP 주소나 도메인 이름을 위치 정보로 바꿔주는 서비스, [ip-api](https://ip-api.com/docs/api:json)
+- Url을 통해 ip나 도메인 이름을 전달 
+- ex) ip-api.com/json/naver.com
