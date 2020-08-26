@@ -9,11 +9,11 @@
 - 그러나 셀모드는 코드를 저장하지 않기 때문에 별도의 메모를 하지 않으면 재사용 불가능
 - 에디터 모드는 직접 텍스트로 py 파일을 저장하고 파이썬을 사용해 전체 내용을 한 번에 실행 
 - 파일을 저장하여 실행하기 때문에 재사용이 가능
-- ctrl + n 카를 사용하여 에디터 모드 실행
+- 'ctrl + n' 키를 사용하여 에디터 모드 실행
 
 # 파이썬 기본 문법
 
-## 들여쓰기 (ident)
+## 들여쓰기 (indent)
 - 파이썬은 다른 언어들과 달리 들여쓰기에 매우 민감
 - 다른 언어들은 중괄호({,}) 등을 통해 코드를 묶음
 - 파일썬은 들여 쓰기를 통해 코드를 묶음
@@ -56,11 +56,11 @@ type(a)
 ```py
 print(r'c:\new_folder') # c:\new_folder
 ``` 
-- 다수의 새로운 줄을 삽입할 시에는 """..."""" 나 "..." 를 활용하면 편리 
+- 다수의 새로운 줄을 삽입할 시에는 """...""" 나 "..." 를 활용하면 편리 
 - 이 문구 내에서 엔터를 삽입하면 자동으로 새로운 줄로 인식하여 출력
-- '\'를 삽입하면 엔터가 무시
+- \ 를 삽입하면 엔터가 무시
 ```py
-# UsageL things [OPTIONS]
+# Usage things [OPTIONS]
 #   -h      Display this usage message
 #   -H      Hostname to connect
 
@@ -104,7 +104,7 @@ print("우리집 주소는 %s 아파트 %d동 %d호"%('꿈나무', 101, 101)) # 
 - 파이썬에서는 포맷스트링을 무시하고 사용할 수 있는 문법도 존재
 - 중괄호를 사용하면 데이터 형에 상관없이 원하는 데이터를 전달
 ```py
-print("우리집 주소는 {} 아파트 {}동 {}호".format('꿈나무', 101, 101)); # 우리집 주소는 꿈나무 아파트 101동 101호 
+print("우리집 주소는 {} 아파트 {}동 {}호".format('꿈나무', 101, 101)) # 우리집 주소는 꿈나무 아파트 101동 101호 
 ```
 ## 파이썬 데이터 입력
 - input: 사용자 입력을 받는 함수
@@ -633,4 +633,58 @@ with open('파일명', 'r') as f:
 with open('파일명', 'rb') as f:
     a = f.read()
     a.decode('cp949')
+```
+
+# 터틀 Graphic 다루기 
+
+```py
+import turtle as t # turtle 을 nameing을 t 로 사용
+
+# 1. 정사각형 그리기
+for i in range(4):
+    t.forward(100) # t.fd(100)
+    t.left(90)
+    print(t.pos())
+
+# 2. 평행사변형 그리기
+t.up() # draw unset
+t.goto(200, 0)
+t.down() # draw set
+
+for i in range(2):
+    t.fd(120)
+    t.left(120)
+    t.fd(80)
+    t.left(60)
+    print(t.pos())
+
+# 3. 별 모양 그리기
+t.up()
+t.goto(-200, 0)
+t.down()
+
+for i in range(5):
+    t.fd(100)
+    t.right(360*2 // 5)
+
+# 4. 기하학적인 도형 그리기
+t.up()
+t.goto(0, 300)
+t.down()
+
+t.color('red', 'yellow')
+t.begin_fill() # 채우기 시작 
+
+while(True):
+    t.forward(100)
+    t.left(170)
+    x, y = t.pos()
+    if int(x) == 0 and int(y) == 300:
+        print(t.pos())
+        print(abs(t.pos()))
+        break
+
+t.end_fill() # 채우기 종료
+t.done() 
+
 ```
