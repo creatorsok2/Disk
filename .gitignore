@@ -41,3 +41,4 @@ temp
 *.log
 *.ipdb
 *.iobj
+.idea
