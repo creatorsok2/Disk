@@ -120,7 +120,8 @@ _ # shell 에서 마지막으로 나온 결과를 출력해준다.
 number = input("숫자 여러 개를 공백으로 구분해서 넣어주세요:")
 > 1 2 3 4 5 # ['1' '2' '3' '4' '5']
 a, b, c, d, e = number.split(' ')
-a # 1
+a # '1'
+int(a) # 1
 ```
 ## 강제 형변환 하기 
 - int(): 문자형 데이터나 실수 형 데이터를 정수로 변환(실패 시 에러)
@@ -139,8 +140,8 @@ print("""\
 *        *""");
 
 # 계산기 
-a = int(input("a: = ")) # 2
-b = int(input("b: = ")) # 3
+a = int(input("a: = ")) # input 2
+b = int(input("b: = ")) # input 3
 print("{} + {} = {}".format(a, b, a+b)) # 2 + 3 = 5
 print("a + b = {}".format(int(input("a: = ")) + int(input("b: = ")))) # 한줄로 표현
 ```
