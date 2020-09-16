@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{2b91a6d3-2bae-47b3-9f7a-187e6aa00387}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cascaded_shadow_maps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shadow_multi_leak_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_multi_noleak_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_pcf_4tap_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_pcf_8tap_random_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_pcf_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_pcf_gaussian_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_pcf_trilinear_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_single_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_single_hl_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shadow_vertex.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="view_fragment.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="view_vertex.glsl">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
