@@ -1,5 +1,6 @@
 #include <iostream>
-#include <windows.h>
+#include "IncludeOpenGL.h"
+#include "FrameWnd.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
