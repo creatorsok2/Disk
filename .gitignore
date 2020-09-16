@@ -28,6 +28,8 @@
 
 # Folder 
 .vs
+.vscode
+.idea
 temp
 
 # Executables
@@ -41,5 +43,4 @@ temp
 *.log
 *.ipdb
 *.iobj
-.idea
 *.user

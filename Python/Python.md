@@ -18,7 +18,7 @@
 - 다른 언어들은 중괄호({,}) 등을 통해 코드를 묶음
 - 파일썬은 들여 쓰기를 통해 코드를 묶음
 
-```py
+```py {.line-numbers}
 def add(a, b): # 함수 add 선언
     return a+b # 함수 add 내용
 result = add(1, 2) # 함수 실행
@@ -754,3 +754,269 @@ write('Congratulation ' + color_name, align='center', font=('Arial', 20, 'normal
     - 데이터분석 > 머신러닝 > 딥러닝
     - 사물인터넷 : 라즈베리파이 파이썬 
     - 업무자동화 프로그래밍 (데이터베이스, 시스템 유틸리티)
+
+
+# 클래스
+
+```py
+class calculator:
+    class_value = "shared value"
+    def __init__(self):
+        self.result = 0
+
+    def add(self, val):
+        self.result += val
+    def min(self, val):
+        pass
+
+class calculatorMore(calculator):
+    def min(self, val):
+        self.result -= val
+
+a = calculator()
+a.add(1)
+print(a.result) # 1
+a.add(2)
+print(a.result) # 3
+a.min(1)
+print(a.result) # 3
+
+b = calculatorMore()
+b.min(1) # -1
+
+# Member Value 는 공유되는 변수이다.
+if id(calculator.class_value) == id(a.class_value): 
+    print("calculator.class_value == a.class_value") 
+if id(calculatorMore.class_value) == id(b.class_value): 
+    print("calculatorMore.class_value == b.class_value") 
+if id(a.class_value) == id(b.class_value): 
+    print("a.class_value == b.class_value") 
+ ```
+
+# 모듈
+
+```py 
+import module_name # 사용시 module_name.module_function_name
+from module_name import module_function_name # 사용시 module_function_name
+from module_name import module_function_name1, module_function_name1
+from module_name import * # module 내의 모든 함수 사용
+
+if __name__ == "__main__": # 현재 모듈이 main 임을 의미한다.
+    pass
+```
+
+# 패키지
+
+```py
+"""
+가상의 game 패키지 예)
+
+game/
+    __init__.py
+    sound/
+        __init__.py
+        echo.py
+        wav.py
+    graphic/
+        __init__.py
+        screen.py
+        render.py
+    play/
+        __init__.py
+        run.py
+        test.py
+"""
+# echo 모듈을 사용 
+import game.sound.echo # 사용시 game.sound.echo.module_function_name 
+from game.sound import echo # 사용시 echo.module_function_name
+from game.sound.echo import module_function_name # 사용시 module_function_name
+```
+
+## __init__.py 의 용도
+\__init__.py 파일은 해당 디렉터리가 패키지의 일부임을 알려주는 역할을 한다. 만약 파일이 없다면 패키지로 인식되지 않는다.
+(참고. python3.3 버전부터는 \__init__.py 파일이 없어도 패키지로 인식한다. 하지만 하위 버전 호환을 위해 파일을 생성하는 것이 안전한 방법이다.)
+
+```py
+"""
+echo 모듈을 사용할 수 있어야 할 것 같은데 echo라는 이름이 정의되지 않았다는 이름 오류(NameError)가 발생했다.
+
+>>> from game.sound import *
+>>> echo.echo_test()
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+NameError: name 'echo' is not defined
+"""
+# game/sound/__init__.py
+__all__ = ['echo']
+
+>>> from game.sound import * 
+>>> echo.module_function_name() # success
+
+```
+
+# 예외처리
+
+```py
+try:
+
+
+except: # all error
+    pass
+
+except ZeroDivisionError: # 발생 에러
+except ZeroDivisionError as e:
+    pass 
+
+finally: # 예외 발생 여부에 상관없이 항상 수행
+    pass
+
+raise NotImplementedError # 오류 전달
+
+class MyError(Exception):
+    def __str__(self):
+        return "Message"
+
+def func_error_throw():
+    raise MyError()
+
+try:
+    func_error_throw()
+except MyError as e:
+    print(e) # Message
+```
+# 정규식
+
+## 문자 클래스 []
+- [] 사이의 문자들과 매치
+- [] 안의 두 문자 사이에 하이픈(-)을 사용하면 두 문자 사이의 범위(From - To)를 의미한다.
+    - [a-zA-Z] : 알파벳 모두
+    - [0-9] : 숫자
+
+### 자주 사용하는 문자 클래스
+- \d : 숫자와 매치, [0-9]와 동일한 표현식이다.
+- \D : 숫자가 아닌 것과 매치, [^0-9]와 동일한 표현식이다.
+- \s : whitespace 문자와 매치, [ \t\n\r\f\v]와 동일한 표현식이다. 맨 앞의 빈칸은 공백문자(space)를 의미한다.
+- \S : whitespace 문자가 아닌 것과 매치, [^ \t\n\r\f\v]와 동일한 표현식이다.
+- \w : 문자+숫자(alphanumeric)와 매치, [a-zA-Z0-9_] 와 동일한 표현식이다.
+- \W : 문자+숫자(alphanumeric)와 아닌 문자와 매치, [^a-zA-Z0-9_] 와 동일한 표현식이다.
+
+## Dot(.)
+- 정규 표현식의 Dot(.) 메타 문자는 줄바꿈 문자인 \n을 제외한 모든 문자와 매치됨을 의미한다.
+- re.DOTALL 옵션을 주면 \n 문자와도 매치된다.
+
+```py
+a.b # a + 모든문자 + b
+a[.]b # a + Dot(.) + b, 문자 클래스([]) 내에 메타 문자가 사용된다면 이것은 메타 문자 그대로를 의미한다.
+```
+## 반복(*/+/{m,n},?)
+- '*' 은 반복을 의미하는 메타문자로 사용되며, 0부터 무한대로 반복될 수 있다
+- '+' 은 반복을 의미하는 메타문자로 사용되며, 최소 1번 이상 반복될 때 사용한다.
+- '{}' 메타 문자를 사용하면 반복 횟수를 고정할 수 있다. 
+- '?' 메타 문자는 반복은 아니지만 {0, 1} 과 동일한 의미이다.
+
+```py
+cat == ca{2}t # false
+caat == ca{2}t # true
+caaat == cat{2}t # false
+
+caat == ca{2, 3}t # true
+caaat == ca{2, 3}t # true
+caaaat == cat{2, 3}t # false
+
+ct = ca?t # true
+cat == ca?t # true
+caat == ca?t # false
+```
+
+## 파이썬에서 정규 표현식을 지원하는 re 모듈
+```py
+import re
+a = re.compile('[a-z]+')
+
+# match, 문자열의 처음부터 정규식과 매치되는지 조사한다.
+b = a.match('python') # get object
+a.match('3.0 python') # none
+b.group() # python
+b.start() # 0
+b.end() # 6
+b.span() # (0, 6)
+
+b = re.match('[a-z]+', 'python') 
+
+# search, 문자열 전체를 검색하여 정규식과 매치되는지 조사한다.
+a.search('python') # get object
+b = a.search('3.0 python') # get object
+b.group() # python
+b.start() # 2
+b.end() # 8
+b.span() # (2, 8)
+
+# findall, 정규식과 매치해서 리스트로 돌려준다.
+a.findall('life is too short') # ['life', 'is', 'too', 'short']
+
+# finditer, findall과 동일하지만 결과로 반복 가능한 객체를 돌려준다.
+a.finditer('life is too short') # [object1, object2, object3, object4]
+```
+
+## 기타 옵션
+- \n 문자도 포함하여 매치하고 싶다면, re.DOTALL 또는 re.S 옵션을 사용하여 정규식을 컴파일하면 된다.
+- re.IGNORECASE 또는 re.I 옵션은 대소문자 구별 없이 매치를 수행할 때 사용하는 옵션
+- re.MULTILINE 또는 re.M 옵션은 각 줄을 이용하여 매치를 수행할 때 사용하는 옵션
+- re.VERBOSE 또는 re.X 옵션은 줄단위로 나뉘어 있는 정규식을 Compile 해주는 옵션이다.
+- r" ... ", 정규식 앞의 r 은 row string 이라는 표시이다. 백슬래시(\) 문제처럼 문자열에 있는 메타 문자를 문자로 인식하게 한다.
+```py
+import re
+a = re.compile('a.b')
+a.match('a\nb') # none
+
+a = re.compile('a.b', re.DOTALL)
+a.match('a\nb') # true
+
+a = re.compile('[a-z]+', re.I)
+a.match('python') # true
+
+a = re.compile("^python\s\w+", re.MULTLINE)
+a.findall("""python one
+life is too short
+python two
+you need python
+python tree""") # ['python one', 'python two' 'python three']
+
+a = re.compile(r"""
+^python # 첫 문자는 python 이다.
+\s # whitespace 
+\w+ # 문자+숫자(alphanumeric)
+""", re.X)
+
+```
+## 메타문자
+```py
+import re
+a = re.compile(r'\bclass\b') # ' class ', \b는 whitespace 를 의미한다.
+a.search('no class at all') # (3, 8)
+a.search('the declassified algorithm') # none
+a.search('one subclass is') # none
+a = re.compile(r'\Bclass\B') # '...class...', \B는 not whitespace 를 의미한다.
+a.search('no class at all') # none
+a.search('the declassified algorithm') # (6, 11)
+a.search('one subclass is') # none
+```
+
+## 그루핑(Grouping) 
+- 문자열이 계속해서 반복되는지 조사하는 정규식 작성 
+```py
+# (ABC)+
+import re 
+a = re.compile('(ABC)+')
+a.search('ABCABCABC OK?') # (0, 9)
+a = re.compile
+(r"""
+\w+ # 문자+숫자(alphanumeric), [a-zA-Z0-9_]
+\s+ # whitespace, [\t\n\r\f\v]
+\d+ # 숫자, [0-9]
+[-]
+\d+ # 숫자, [0-9]
+[-]
+\d+ # 숫자, [0-9]
+""")
+```
