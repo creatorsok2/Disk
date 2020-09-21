@@ -1,12 +1,9 @@
 #include "ShaderWnd.h"
 
-#include <assert.h>
-#include <functional>
-
 CShaderWnd::CShaderWnd()
-	: ourShader("Shader\\3.3\\shader.vs.glsl", "Shader\\3.3\\shader.fs.glsl") 
 	// build and compile our shader program
 	// you can name your shader files however you like	
+	: ourShader("Resource\\Shader\\3.3\\shader.vs.glsl", "Resource\\Shader\\3.3\\shader.fs.glsl")
 {
 }
 

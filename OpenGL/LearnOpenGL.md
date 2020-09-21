@@ -121,7 +121,15 @@ glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 ```
 
 ## Vertex Array Object (VAO) : 정점 배열 객체
-
+- vertex array object 
+- vertex buffer object
+- element buffer object
+- vertex attribute 
+- draw 
+    - bind shader program
+    - bind vertex array object 
+    - draw element 
+    - unbind all
 ```cpp
 unsigned int vao;
 glGenVertexArrays(1, &vao);
@@ -216,3 +224,44 @@ glBindVertexArray(0);
 glfwSwapBuffers(window);
 ```
 
+# Texture : 텍스처
+
+## Texture Wrapping : 텍스처 래핑
+- 텍스처 좌표는 일반적으로 (0, 0) ~ (1, 1) 이지만 범위를 벗어난 좌표를 지정하면 기본 동작은 텍스처 이미지를 반복하는 것이다. 
+    - GL_REPEAT : 텍스처 이미지를 반복 (기본값)
+    - GL_MIRRORED_REPEAT : GL_REPEAT 와 같지만 이미지를 미러링한다.
+    - GL_CLAMP_TO_EDGE : 0 ~ 1 이를 벗어나면 가장자리의 고정된 패턴이 늘어난다. 
+    - GL_CLAMP_TO_BORDER : 범위를 벗어난 좌표에 사용자가 지정한 테두리 색상이 지정된다.
+
+```cpp
+// Wrapping 설정
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+// Border 설정
+float borderColor[] = {1.f, 1.f, 1.f, 1.f};
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+```
+
+## Texture Filtering : 텍스처 필터링
+- GL_NEAREST : 중심이 텍스처 좌표에 가장 가까운 텍셀을 선택합니다. (기본값)
+- GL_LINEAR : 텍스처 좌표의 인접한 텍셀에서 보간 된 값을 가져온다. 텍스처 좌표에서 텍셀 중심까지의 거리가 짧을수록 해당 텍셀의 색상이 샘플링 된 색상에 더 많이 기여한다. 
+
+```cpp
+// 다운 스케일은 Nearst Texture, 업 스케일은 Linear Texture
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINER);
+```
+
+## 밉맵
+- GL_NEAREST_MIPMAP_NEAREST : 픽셀 크기와 일치하는 가장 가까운 밉맵을 선택하고, 가장 가까운 텍스처를 사용한다. 
+- GL_LINEAR_MIPMAP_NEAREST : 픽셀 크기와 일치하는 가장 가까운 밉맵을 선택하고, 선형 보간을 사용하여 샘플링하여 사용한다.
+- GL_NEAREST_MIPMAP_LINER : 픽셀 크기에 가장 인접한 밉맵을 선택하여 선형 보간하고, 가장 가까운 텍스처를 사용한다. 
+- GL_LINEAR_MIPMAP_LINER : 픽셀 크기에 가장 인접한 밉맵을 선택하여 선형 보간하고, 선형 보간을 사용하여 샘플링하여 사용한다.
+
+```cpp
+// 일반적으로 밉맵 필터링 옵션 중 하나를 확대 필터로 설정하는데, 밉맵은 주로 텍스처가 축소 될 때 사용되기 때문에 효과가 없다. 
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINER);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINER);
+```
+
+ 

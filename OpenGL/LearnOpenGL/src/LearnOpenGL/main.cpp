@@ -1,3 +1,4 @@
+#include "HelloTriangleWnd.h"
 #include "ShaderWnd.h"
 
 int main()

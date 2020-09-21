@@ -18,27 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="3.3\shader.fs.glsl" />
-    <None Include="3.3\shader.vs.glsl" />
-    <None Include="Simple\simple_frag.glsl" />
-    <None Include="Simple\simple_vert.glsl" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C4D29F8A-9FDF-442E-92F0-BEDD48104BC6}</ProjectGuid>
-    <RootNamespace>Shader</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{38AE3A0B-ECD7-41D7-9791-E8D0F6CDB63D}</ProjectGuid>
+    <RootNamespace>Resource</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -51,7 +45,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>Utility</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -102,13 +96,14 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Resource\Shader" md "$(TargetDir)Resource\Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Resource\*.glsl" /s /e /d /y
+
+if not exist "$(TargetDir)Resource\Image" md "$(TargetDir)Resource\Image"
+xcopy "$(ProjectDir)*.jpg" "$(TargetDir)Resource\*.jpg" /s /e /d /y
+xcopy "$(ProjectDir)*.png" "$(TargetDir)Resource\*.png" /s /e /d /y
+xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -121,13 +116,14 @@ xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Resource\Shader" md "$(TargetDir)Resource\Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Resource\*.glsl" /s /e /d /y
+
+if not exist "$(TargetDir)Resource\Image" md "$(TargetDir)Resource\Image"
+xcopy "$(ProjectDir)*.jpg" "$(TargetDir)Resource\*.jpg" /s /e /d /y
+xcopy "$(ProjectDir)*.png" "$(TargetDir)Resource\*.png" /s /e /d /y
+xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -144,13 +140,14 @@ xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Resource\Shader" md "$(TargetDir)Resource\Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Resource\*.glsl" /s /e /d /y
+
+if not exist "$(TargetDir)Resource\Image" md "$(TargetDir)Resource\Image"
+xcopy "$(ProjectDir)*.jpg" "$(TargetDir)Resource\*.jpg" /s /e /d /y
+xcopy "$(ProjectDir)*.png" "$(TargetDir)Resource\*.png" /s /e /d /y
+xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -167,14 +164,25 @@ xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Resource\Shader" md "$(TargetDir)Resource\Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Resource\*.glsl" /s /e /d /y
+
+if not exist "$(TargetDir)Resource\Image" md "$(TargetDir)Resource\Image"
+xcopy "$(ProjectDir)*.jpg" "$(TargetDir)Resource\*.jpg" /s /e /d /y
+xcopy "$(ProjectDir)*.png" "$(TargetDir)Resource\*.png" /s /e /d /y
+xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="Image\container.jpg" />
+    <Image Include="Image\wall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\3.3\shader.fs.glsl" />
+    <None Include="Shader\3.3\shader.vs.glsl" />
+    <None Include="Shader\Simple\simple.fs.glsl" />
+    <None Include="Shader\Simple\simple.vs.glsl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

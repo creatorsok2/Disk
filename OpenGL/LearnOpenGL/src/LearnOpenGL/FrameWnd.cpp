@@ -1,5 +1,5 @@
 #include "FrameWnd.h"
-#include "IncludeOpenGL.h"
+#include "IncludeHeader.h"
 #include "ProgramDirectory.h"
 
 CFrameWnd::CFrameWnd()

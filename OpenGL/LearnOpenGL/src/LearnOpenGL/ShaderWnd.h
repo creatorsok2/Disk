@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IncludeOpenGL.h"
+#include "IncludeHeader.h"
 #include "FrameWnd.h"
 
 class CShaderWnd : public CFrameWnd

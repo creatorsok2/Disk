@@ -1,8 +1,6 @@
 #include "HelloTriangleWnd.h"
-#include "IncludeOpenGL.h"
+#include "IncludeHeader.h"
 
-#include <assert.h>
-#include <functional>
 
 void CHelloTriangleWnd::RegisterEventCallback()
 {

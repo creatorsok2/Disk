@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Image Include="Image\wall.jpg">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Image\container.jpg">
+      <Filter>Image</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Image">
+      <UniqueIdentifier>{cf54cdb4-57c3-487a-85da-d4c687245d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{abc0c302-6cb7-435f-8e7b-64df09fd7a6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\3.3">
+      <UniqueIdentifier>{642f6084-a4c9-4f7d-a2a7-7ab1a2a20d90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Simple">
+      <UniqueIdentifier>{e327255d-b8f6-4f89-bd4d-744a7ae9ea7a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\3.3\shader.fs.glsl">
+      <Filter>Shader\3.3</Filter>
+    </None>
+    <None Include="Shader\3.3\shader.vs.glsl">
+      <Filter>Shader\3.3</Filter>
+    </None>
+    <None Include="Shader\Simple\simple.fs.glsl">
+      <Filter>Shader\Simple</Filter>
+    </None>
+    <None Include="Shader\Simple\simple.vs.glsl">
+      <Filter>Shader\Simple</Filter>
+    </None>
+  </ItemGroup>
+</Project>

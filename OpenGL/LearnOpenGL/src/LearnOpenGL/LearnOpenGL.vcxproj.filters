@@ -44,14 +44,17 @@
     <ClInclude Include="ProgramDirectory.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="IncludeOpenGL.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="ShaderWnd.h">
       <Filter>Wnd</Filter>
     </ClInclude>
     <ClInclude Include="FrameWnd.h">
       <Filter>Wnd\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="IncludeHeader.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>__Library__</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
