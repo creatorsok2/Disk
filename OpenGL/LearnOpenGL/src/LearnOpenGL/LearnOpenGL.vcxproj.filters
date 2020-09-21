@@ -4,11 +4,25 @@
     <Filter Include="Main">
       <UniqueIdentifier>{0acc3afa-34f1-4a55-ba5e-c4f3d67ab9ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{89110521-2f43-451e-a9ce-d912a7d7d94e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="..\..\include\v141\GLAD\glad.c" />
+    <ClCompile Include="ProgramDirectory.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="learnopengl\shader_s.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramDirectory.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

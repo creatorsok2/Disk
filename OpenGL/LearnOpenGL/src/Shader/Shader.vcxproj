@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="3.3\shader.fs.glsl" />
+    <None Include="3.3\shader.vs.glsl" />
     <None Include="Simple\simple_frag.glsl" />
     <None Include="Simple\simple_vert.glsl" />
   </ItemGroup>
@@ -100,8 +102,8 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Render" md "$(TargetDir)Render"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -119,8 +121,8 @@ xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Render" md "$(TargetDir)Render"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -142,8 +144,8 @@ xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Render" md "$(TargetDir)Render"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -165,8 +167,8 @@ xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(TargetDir)Render" md "$(TargetDir)Render"
-xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Render/*.glsl" /s /e /d /y</Command>
+      <Command>if not exist "$(TargetDir)Shader" md "$(TargetDir)Shader"
+xcopy "$(ProjectDir)*.glsl" "$(TargetDir)Shader/*.glsl" /s /e /d /y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
