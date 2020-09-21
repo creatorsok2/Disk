@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{FCD0363E-7096-42FB-A829-982345CA5AF3}</ProjectGuid>
     <RootNamespace>LearnOpenGL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -171,12 +171,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\include\v141\GLAD\glad.c" />
+    <ClCompile Include="FrameWnd.cpp" />
+    <ClCompile Include="HelloTriangleWnd.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
+    <ClCompile Include="ShaderWnd.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FrameWnd.h" />
+    <ClInclude Include="HelloTriangleWnd.h" />
+    <ClInclude Include="IncludeOpenGL.h" />
     <ClInclude Include="learnopengl\shader_s.h" />
     <ClInclude Include="ProgramDirectory.h" />
+    <ClInclude Include="ShaderWnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

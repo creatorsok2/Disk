@@ -1,12 +1,12 @@
 #include "FrameWnd.h"
 #include "IncludeOpenGL.h"
-
-#include <iostream>
-#include <assert.h>
-
+#include "ProgramDirectory.h"
 
 CFrameWnd::CFrameWnd()
 {
+	auto modulepath = CProgramDirectory::GetModuleDirectory();
+	SetCurrentDirectory(modulepath.c_str());
+
 	/* glfw initialize and configue */
 
 	glfwInit();
@@ -25,6 +25,11 @@ CFrameWnd::CFrameWnd()
 
 	if(m_pWnd)
 		glfwMakeContextCurrent(m_pWnd);
+
+	/* glad load all OpenGL function pointers */
+
+	auto res = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+	assert(res && "Failed to initialize GLAD");
 }
 
 CFrameWnd::~CFrameWnd()
@@ -34,51 +39,32 @@ CFrameWnd::~CFrameWnd()
 	glfwTerminate();
 }
 
-void CFrameWnd::RegisterEventCallback()
+void CFrameWnd::Run()
 {
-	assert(m_pWnd != nullptr && "not defined window");
+	if (m_pWnd == nullptr)
+		return;
 
-	glfwSetFramebufferSizeCallback(m_pWnd, [](GLFWwindow* window, int width, int height)
-	{
-		if(auto pWnd = static_cast<CFrameWnd*>(glfwGetWindowUserPointer(window)))
-			pWnd->FrameBufferSizeCallback(window, width, height);
-	});
-}
+	RegisterEventCallback();
 
-void CFrameWnd::LoadOpenGLFunction()
-{
-	/* glad load all OpenGL function pointers */
-
-	auto res = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-	assert(res && "Failed to initialize GLAD");
-}
-
-void CFrameWnd::RenderLoop()
-{
-	/* render loop */
+	InitRender();
 
 	while (!glfwWindowShouldClose(m_pWnd))
 	{
 		// input
 		ProcessInput();
 
-		// rendering command hear 
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		Draw();
 
 		// check and call events and swap the buffers
 		glfwSwapBuffers(m_pWnd);
 		glfwPollEvents();
 	}
+
+	ReleaseRender();
 }
 
 void CFrameWnd::ProcessInput()
 {
 	if (glfwGetKey(m_pWnd, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(m_pWnd, true);
-}
-
-void CFrameWnd::FrameBufferSizeCallback(GLFWwindow*, int width, int height)
-{
-	glViewport(0, 0, width, height);
 }

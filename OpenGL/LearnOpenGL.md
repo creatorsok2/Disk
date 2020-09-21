@@ -107,26 +107,6 @@ glUseProgram(shaderProgram);
 // 3. now draw the object
 ```
 
-## Vertex Array Object (VAO) : 정점 배열 객체
-
-```cpp
-unsigned int vao;
-glGenVertexArrays(1, &vao);
-// 1. bind vertex array object
-glBindVertexArray(vao);
-// 2. copy our vertics array in a buffer for OpenGL to use
-glBindBuffer(GL_ARRAY_BUFFER, vbo);
-glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), GL_STATIC_DRAW);
-// 3. then set our vertex attributes pointers
-glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); 
-glEnableVertexAttribAray(0);
-
-// 4. draw the object
-glUseProgram(shaderProgram);
-glBindVertexArray(vao);
-glDrawArrays(GL_TRIANGLES, 0, 3);
-```
-
 ## Element Buffer Object (EBO) : 요소 버퍼 객체
 
 ```cpp
@@ -138,6 +118,101 @@ glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-
 ```
+
+## Vertex Array Object (VAO) : 정점 배열 객체
+
+```cpp
+unsigned int vao;
+glGenVertexArrays(1, &vao);
+// 1. bind vertex array object
+glBindVertexArray(vao);
+// 2. copy our vertics array in a buffer for OpenGL to use
+glBindBuffer(GL_ARRAY_BUFFER, vbo);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), GL_STATIC_DRAW);
+// 3. copy our index array in a element buffer for OpenGL to use
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+// 4. then set our vertex attributes pointers
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); 
+glEnableVertexAttribAray(0);
+// 5. draw the object
+glUseProgram(shaderProgram);
+glBindVertexArray(vao);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+glBindVertexArray(0);
+```
+
+# 셰이더
+```cpp
+// 정점 속성의 최대 개수 구하기 (최소 16개는 가능하다.)
+int nrAttributes;
+glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+std::cout << "Maximum nr of vertex attributes supported : " << nrAttributes << std::endl;
+```
+- 정점 셰이더는 정점 데이터가 구성되는 방식을 정의하기 위해 위치 메타 데이터로 입력 변수를 지정하여 CPU에서 정점 속성을 구성 할 수 있습니다. 정점 셰이더에는 입력에 대한 추가 레이아웃 사양이 필요하므로 정점 데이터와 연결할 수 있습니다.
+- layout (location = 0) 지정자를 생략하고 glGetAttribLocation 을 이용하여 속성 위치를 쿼리 할 수도 있습니다. 
+
+## in, out
+```glsl 
+// Vertex Shader 
+#version 330 core
+layout (location = 0) in vec3 aPos; // attribute position 0
+out vec4 vertexColor; // specify a color output to the fragment shader
+
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+    vertexColor = vec4(0.5f, 0.0f, 0.0f, 1.0f); // dark-red
+}
+```
+
+```glsl
+// Fragment Shader
+#version 330 core
+out vec4 FragColor;
+
+in vec4 vertexColor; // the input variable from the vertex shader 
+
+void main()
+{
+    FragColor = vertexColor;
+}
+```
+
+## uniform
+- cpu의 애플리케이션에서 gpu 셰이더로 데이터를 전달하는 또 다른 방법이다. 
+- uniform 은 global 변수이며, 모든 셰이더에서 엑세스 할 수 있음
+- uniform 값을 설정하는 것과 관계없이 uniform은 재설정 되거나 업데이트 될 때까지 값을 유지한다.
+
+```glsl
+// Fragment Shader
+#version 330 core
+out vec4 FragColor;
+
+uniform vec4 ourColor; // we set this variable in the OpenGL code
+
+void main()
+{
+    FragColor = ourColor;
+}
+```
+```cpp
+glClearColor(0.2f, 0.0f, 0.0f, 1.0f)
+glClear(GL_COLOR_BUFFER_BIT);
+
+float timeValue = glfwGetTime();
+float greenValue = (sin(timeValue) / 2.0f) + 0.5f; // 0 ~ 1
+int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor"); // layout location 검색
+
+// 현재 활성화 된 셰이더 프로그램에서 유니폼을 설정
+glUseProgram(shaderProgram);
+glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+
+glBindVertexArray(vao);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+glBindVertexArray(0);
+
+glfwSwapBuffers(window);
+```
+

@@ -1,7 +1,5 @@
-#include <iostream>
-#include <windows.h>
-
 #include "ProgramDirectory.h"
+#include "IncludeOpenGL.h"
 
 std::string CProgramDirectory::GetWorkingDirectory()
 {
