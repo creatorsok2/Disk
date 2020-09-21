@@ -9,5 +9,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\include\v141\GLAD\glad.c" />
   </ItemGroup>
 </Project>

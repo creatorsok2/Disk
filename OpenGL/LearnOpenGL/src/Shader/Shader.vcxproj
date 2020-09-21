@@ -18,6 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Simple\simple_frag.glsl" />
+    <None Include="Simple\simple_vert.glsl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C4D29F8A-9FDF-442E-92F0-BEDD48104BC6}</ProjectGuid>
