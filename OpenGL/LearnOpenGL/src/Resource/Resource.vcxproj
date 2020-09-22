@@ -187,6 +187,10 @@ xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     <None Include="Shader\4.2\lighting_maps.vs.glsl" />
     <None Include="Shader\4.2\light_cube.fs.glsl" />
     <None Include="Shader\4.2\light_cube.vs.glsl" />
+    <None Include="Shader\6\light_cube.fs.glsl" />
+    <None Include="Shader\6\light_cube.vs.glsl" />
+    <None Include="Shader\6\multiple_lights.fs.glsl" />
+    <None Include="Shader\6\multiple_lights.vs.glsl" />
     <None Include="Shader\7.4\camera.fs.glsl" />
     <None Include="Shader\7.4\camera.vs.glsl" />
     <None Include="Shader\Simple\simple.fs.glsl" />

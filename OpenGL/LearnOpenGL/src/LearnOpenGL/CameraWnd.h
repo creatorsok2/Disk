@@ -4,6 +4,9 @@
 
 class CCameraWnd : public frm::CFrameWnd
 {
+	static float vertices[];
+	static glm::vec3 cubePositions[];
+
 public:
 	CCameraWnd();
 	virtual ~CCameraWnd() = default;

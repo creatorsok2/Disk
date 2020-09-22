@@ -2,13 +2,15 @@
 
 #include "FrameWnd.h"
 
-class CLightingMapsWnd : public frm::CFrameWnd
+class CMultipleLightsWnd : public frm::CFrameWnd
 {
 	static float vertices[];
+	static glm::vec3 cubePositions[];
+	static glm::vec3 pointLightPositions[];
 
 public:
-	CLightingMapsWnd();
-	virtual ~CLightingMapsWnd() = default;
+	CMultipleLightsWnd();
+	virtual ~CMultipleLightsWnd() = default;
 
 private:
 	virtual void WindowProperty() override;
@@ -25,25 +27,22 @@ private:
 	unsigned int loadTexture(const char *path);
 
 private:
-
-	// build and compile our shader zprogram
-	// ------------------------------------
-	Shader lightingShader;// ("4.2.lighting_maps.vs", "4.2.lighting_maps.fs");
-	Shader lightCubeShader;//("4.2.light_cube.vs", "4.2.light_cube.fs");
+	Shader lightingShader;// ("6.multiple_lights.vs", "6.multiple_lights.fs");
+	Shader lightCubeShader;//("6.light_cube.vs", "6.light_cube.fs");
 	unsigned int VBO, cubeVAO;
 	unsigned int lightCubeVAO;
 	unsigned int diffuseMap;// = loadTexture("Resource/Image/container2.png");
 	unsigned int specularMap;// = loadTexture("Resource/Image/container2_specular.png");
 
 	// camera
-	Camera camera;// (glm::vec3(0.0f, 0.0f, 3.0f));
-	float lastX;// = SCR_WIDTH / 2.0f;
-	float lastY;// = SCR_HEIGHT / 2.0f;
-	bool firstMouse;// = true;
+	Camera camera;
+	float lastX;
+	float lastY;
+	bool firstMouse;
 
 	// timing
-	float deltaTime;// = 0.0f;
-	float lastFrame;// = 0.0f;
+	float deltaTime;
+	float lastFrame;
 
 	// lighting
 	glm::vec3 lightPos;//(1.2f, 1.0f, 2.0f);

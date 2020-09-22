@@ -42,6 +42,9 @@
     <ClCompile Include="LoadImage.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="MultipleLightsWnd.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learnopengl\shader_s.h">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="LoadImage.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MultipleLightsWnd.h">
+      <Filter>Wnd</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

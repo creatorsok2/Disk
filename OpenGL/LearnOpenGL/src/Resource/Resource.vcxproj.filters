@@ -36,6 +36,9 @@
     <Filter Include="Shader\4.2">
       <UniqueIdentifier>{6b9007b7-4dd4-4b3c-9352-0b713db9b54f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\6">
+      <UniqueIdentifier>{51d40151-ee93-443f-83f0-915cc7cf11cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\3.3\shader.fs.glsl">
@@ -67,6 +70,18 @@
     </None>
     <None Include="Shader\4.2\light_cube.fs.glsl">
       <Filter>Shader\4.2</Filter>
+    </None>
+    <None Include="Shader\6\multiple_lights.vs.glsl">
+      <Filter>Shader\6</Filter>
+    </None>
+    <None Include="Shader\6\multiple_lights.fs.glsl">
+      <Filter>Shader\6</Filter>
+    </None>
+    <None Include="Shader\6\light_cube.vs.glsl">
+      <Filter>Shader\6</Filter>
+    </None>
+    <None Include="Shader\6\light_cube.fs.glsl">
+      <Filter>Shader\6</Filter>
     </None>
   </ItemGroup>
 </Project>

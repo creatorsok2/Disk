@@ -177,6 +177,7 @@
     <ClCompile Include="LightingMapsWnd.cpp" />
     <ClCompile Include="LoadImage.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MultipleLightsWnd.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
     <ClCompile Include="ShaderWnd.cpp" />
   </ItemGroup>
@@ -190,6 +191,7 @@
     <ClInclude Include="learnopengl\shader_s.h" />
     <ClInclude Include="LightingMapsWnd.h" />
     <ClInclude Include="LoadImage.h" />
+    <ClInclude Include="MultipleLightsWnd.h" />
     <ClInclude Include="ProgramDirectory.h" />
     <ClInclude Include="ShaderWnd.h" />
     <ClInclude Include="stb_image.h" />
