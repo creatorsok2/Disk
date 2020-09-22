@@ -31,7 +31,6 @@
 .vscode
 .idea
 temp
-OpenGL/LearnOpenGL/bin/v141/*/*/Resource
 
 # Executables
 *.exe

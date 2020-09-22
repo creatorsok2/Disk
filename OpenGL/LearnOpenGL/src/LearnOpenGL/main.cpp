@@ -3,10 +3,11 @@
 #include "CameraWnd.h"
 #include "LightingMapsWnd.h"
 #include "MultipleLightsWnd.h"
+#include "ModelWnd.h"
 
 int main()
 {
-	CMultipleLightsWnd wnd;
+	CModelWnd wnd;
 	wnd.Run();
 
 	return 0;

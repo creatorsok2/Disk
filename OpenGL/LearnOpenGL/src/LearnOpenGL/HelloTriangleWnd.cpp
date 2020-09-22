@@ -1,3 +1,5 @@
+#pragma once
+
 #include "IncludeHeader.h"
 #include "HelloTriangleWnd.h"
 

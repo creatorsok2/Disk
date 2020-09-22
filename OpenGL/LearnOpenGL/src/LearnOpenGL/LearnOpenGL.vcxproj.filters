@@ -13,6 +13,9 @@
     <Filter Include="Wnd\Base">
       <UniqueIdentifier>{d53acf9a-ee89-4ab8-b0ca-e985d353af4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="__Util__">
+      <UniqueIdentifier>{5dbae45e-1398-42ca-9c0d-c66fca677dfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -23,9 +26,6 @@
     </ClCompile>
     <ClCompile Include="HelloTriangleWnd.cpp">
       <Filter>Wnd</Filter>
-    </ClCompile>
-    <ClCompile Include="ProgramDirectory.cpp">
-      <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="ShaderWnd.cpp">
       <Filter>Wnd</Filter>
@@ -39,10 +39,16 @@
     <ClCompile Include="LightingMapsWnd.cpp">
       <Filter>Wnd</Filter>
     </ClCompile>
-    <ClCompile Include="LoadImage.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="MultipleLightsWnd.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramDirectory.cpp">
+      <Filter>__Util__</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadImage.cpp">
+      <Filter>__Util__</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelWnd.cpp">
       <Filter>Wnd</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,17 +59,11 @@
     <ClInclude Include="HelloTriangleWnd.h">
       <Filter>Wnd</Filter>
     </ClInclude>
-    <ClInclude Include="ProgramDirectory.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="ShaderWnd.h">
       <Filter>Wnd</Filter>
     </ClInclude>
     <ClInclude Include="FrameWnd.h">
       <Filter>Wnd\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="IncludeHeader.h">
-      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>__Library__</Filter>
@@ -80,10 +80,28 @@
     <ClInclude Include="LightingMapsWnd.h">
       <Filter>Wnd</Filter>
     </ClInclude>
-    <ClInclude Include="LoadImage.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="MultipleLightsWnd.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramDirectory.h">
+      <Filter>__Util__</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadImage.h">
+      <Filter>__Util__</Filter>
+    </ClInclude>
+    <ClInclude Include="IncludeHeader.h">
+      <Filter>__Util__</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\shader.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\mesh.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\model.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelWnd.h">
       <Filter>Wnd</Filter>
     </ClInclude>
   </ItemGroup>

@@ -181,6 +181,8 @@ xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     <Image Include="Image\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shader\1\model_loading.fs.glsl" />
+    <None Include="Shader\1\model_loading.vs.glsl" />
     <None Include="Shader\3.3\shader.fs.glsl" />
     <None Include="Shader\3.3\shader.vs.glsl" />
     <None Include="Shader\4.2\lighting_maps.fs.glsl" />

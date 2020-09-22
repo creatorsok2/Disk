@@ -55,7 +55,7 @@ public:
 				geometryCode = gShaderStream.str();
 			}
 		}
-		catch (std::ifstream::failure&)
+		catch (std::ifstream::failure& e)
 		{
 			std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
 		}
@@ -74,7 +74,7 @@ public:
 		glCompileShader(fragment);
 		checkCompileErrors(fragment, "FRAGMENT");
 		// if geometry shader is given, compile geometry shader
-		unsigned int geometry = 0;
+		unsigned int geometry;
 		if (geometryPath != nullptr)
 		{
 			const char * gShaderCode = geometryCode.c_str();

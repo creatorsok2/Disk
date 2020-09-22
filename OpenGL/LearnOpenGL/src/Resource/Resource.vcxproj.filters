@@ -39,6 +39,9 @@
     <Filter Include="Shader\6">
       <UniqueIdentifier>{51d40151-ee93-443f-83f0-915cc7cf11cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\1">
+      <UniqueIdentifier>{96b56b6c-3a3e-48c2-8caa-a08e12e3927a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\3.3\shader.fs.glsl">
@@ -82,6 +85,12 @@
     </None>
     <None Include="Shader\6\light_cube.fs.glsl">
       <Filter>Shader\6</Filter>
+    </None>
+    <None Include="Shader\1\model_loading.vs.glsl">
+      <Filter>Shader\1</Filter>
+    </None>
+    <None Include="Shader\1\model_loading.fs.glsl">
+      <Filter>Shader\1</Filter>
     </None>
   </ItemGroup>
 </Project>
