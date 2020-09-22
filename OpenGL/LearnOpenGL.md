@@ -306,3 +306,27 @@ glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 ```
  
+ # Depth Test : 깊이 테스트 
+ - 깊이 테스트는 프래그먼트 셰이더가 실행 된 후 화면 공간에서 수행됩니다.
+ 
+ ```cpp
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Depth buffer 초기화
+glEnable(GL_DEPTH_TEST); // Depth test 활성화
+glDepthFunc(GL_LEQUAL); // Depth 가 작거나 같으면 통과
+glDepthMask(GL_FALSE); // Depth buffer 비활성화 (Read Only Mode)
+ ```
+
+ # Stencil Buffer : 스텐실 버퍼
+ - 스텐실 버퍼에 쓰기를 활성화 합니다. 
+ - 스텐실 버퍼의 내용을 업데이트하여 개체를 렌더링합니다. 
+ - 스텐실 버퍼에 쓰기를 비활성화 합니다.
+ - 개체를 렌더링합니다. 이번에는 스텐실 버퍼의 내용에 따라 특정 프레그먼트를 삭제합니다. 
+
+```cpp
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+glEnable(GL_STENCIL_TEST);
+glStencilMask(0xFF); // each bit is written to the stencil buffer as is
+glStencilMask(0x00); // each bit ends up as 0 in the stencil buffer (disabling writes)
+```
+
+glStencilFunc
