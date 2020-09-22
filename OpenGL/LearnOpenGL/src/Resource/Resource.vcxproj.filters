@@ -10,6 +10,12 @@
     <Image Include="Image\awesomeface.png">
       <Filter>Image</Filter>
     </Image>
+    <Image Include="Image\container2.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Image\container2_specular.png">
+      <Filter>Image</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shader">
@@ -26,6 +32,9 @@
     </Filter>
     <Filter Include="Image">
       <UniqueIdentifier>{cf54cdb4-57c3-487a-85da-d4c687245d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\4.2">
+      <UniqueIdentifier>{6b9007b7-4dd4-4b3c-9352-0b713db9b54f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +55,18 @@
     </None>
     <None Include="Shader\7.4\camera.fs.glsl">
       <Filter>Shader\7.4</Filter>
+    </None>
+    <None Include="Shader\4.2\lighting_maps.vs.glsl">
+      <Filter>Shader\4.2</Filter>
+    </None>
+    <None Include="Shader\4.2\lighting_maps.fs.glsl">
+      <Filter>Shader\4.2</Filter>
+    </None>
+    <None Include="Shader\4.2\light_cube.vs.glsl">
+      <Filter>Shader\4.2</Filter>
+    </None>
+    <None Include="Shader\4.2\light_cube.fs.glsl">
+      <Filter>Shader\4.2</Filter>
     </None>
   </ItemGroup>
 </Project>

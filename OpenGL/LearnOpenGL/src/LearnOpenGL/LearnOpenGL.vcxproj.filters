@@ -36,6 +36,12 @@
     <ClCompile Include="CameraWnd.cpp">
       <Filter>Wnd</Filter>
     </ClCompile>
+    <ClCompile Include="LightingMapsWnd.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadImage.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learnopengl\shader_s.h">
@@ -67,6 +73,12 @@
     </ClInclude>
     <ClInclude Include="CameraWnd.h">
       <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="LightingMapsWnd.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadImage.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

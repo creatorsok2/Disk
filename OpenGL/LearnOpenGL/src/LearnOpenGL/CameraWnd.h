@@ -1,6 +1,5 @@
 #pragma once
 
-#include "IncludeHeader.h"
 #include "FrameWnd.h"
 
 class CCameraWnd : public frm::CFrameWnd
@@ -18,9 +17,9 @@ private:
 	virtual void ProcessInput() override;
 
 private:
-	void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-	void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-	void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+	void framebuffer_size_callback(GLFWwindow* pWnd, int width, int height);
+	void mouse_callback(GLFWwindow* pWnd, double xpos, double ypos);
+	void scroll_callback(GLFWwindow* pWnd, double xoffset, double yoffset);
 
 private:
 	Shader ourShader;
