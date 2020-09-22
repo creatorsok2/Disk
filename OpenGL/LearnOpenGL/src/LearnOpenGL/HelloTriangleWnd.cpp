@@ -1,18 +1,17 @@
-#include "HelloTriangleWnd.h"
 #include "IncludeHeader.h"
+#include "HelloTriangleWnd.h"
 
-
-void CHelloTriangleWnd::RegisterEventCallback()
+void CHelloTriangleWnd::WindowProperty()
 {
-	assert(m_pWnd != nullptr && "not defined window");
+	assert(window != nullptr && "not defined window");
 
-	glfwSetWindowUserPointer(m_pWnd, static_cast<void*>(this));
-	glfwSetFramebufferSizeCallback(m_pWnd, [](GLFWwindow* window, int width, int height)
+	glfwSetWindowUserPointer(window, static_cast<void*>(this));
+	glfwSetFramebufferSizeCallback(window, [](GLFWwindow* pWnd, int width, int height)
 	{
-		if (auto pWnd = static_cast<CHelloTriangleWnd*>(glfwGetWindowUserPointer(window)))
+		if (auto pFrameWnd = static_cast<CHelloTriangleWnd*>(glfwGetWindowUserPointer(pWnd)))
 		{
-			auto func = std::bind(&CHelloTriangleWnd::FrameBufferSizeCallback, pWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
-			func(window, width, height);
+			auto func = std::bind(&CHelloTriangleWnd::FrameBufferSizeCallback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+			func(pWnd, width, height);
 		}			
 	});
 }

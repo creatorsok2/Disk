@@ -1,6 +1,8 @@
-#include "FrameWnd.h"
 #include "IncludeHeader.h"
+#include "FrameWnd.h"
 #include "ProgramDirectory.h"
+
+using namespace frm;
 
 CFrameWnd::CFrameWnd()
 {
@@ -20,11 +22,11 @@ CFrameWnd::CFrameWnd()
 
 	/* glfw window creation */
 
-	m_pWnd = glfwCreateWindow(WND_WIDTH, WND_HEIGHT, "LearnOpenGL", NULL, NULL);
-	assert(m_pWnd != nullptr && "Failed to create window");
+	window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+	assert(window != nullptr && "Failed to create window");
 
-	if(m_pWnd)
-		glfwMakeContextCurrent(m_pWnd);
+	if(window)
+		glfwMakeContextCurrent(window);
 
 	/* glad load all OpenGL function pointers */
 
@@ -41,22 +43,24 @@ CFrameWnd::~CFrameWnd()
 
 void CFrameWnd::Run()
 {
-	if (m_pWnd == nullptr)
+	if (window == nullptr)
 		return;
 
-	RegisterEventCallback();
+	WindowProperty();
 
 	InitRender();
 
-	while (!glfwWindowShouldClose(m_pWnd))
+	while (!glfwWindowShouldClose(window))
 	{
+		PreDraw();
+
 		// input
 		ProcessInput();
 
 		Draw();
 
 		// check and call events and swap the buffers
-		glfwSwapBuffers(m_pWnd);
+		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
@@ -65,6 +69,6 @@ void CFrameWnd::Run()
 
 void CFrameWnd::ProcessInput()
 {
-	if (glfwGetKey(m_pWnd, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(m_pWnd, true);
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, true);
 }

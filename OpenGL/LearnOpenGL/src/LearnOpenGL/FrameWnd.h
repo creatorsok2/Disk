@@ -2,26 +2,29 @@
 
 struct GLFWwindow;
 
-class CFrameWnd
+namespace frm
 {
-public:
-	CFrameWnd();
-	virtual ~CFrameWnd();
+	class CFrameWnd
+	{
+	public:
+		CFrameWnd();
+		virtual ~CFrameWnd();
 
-public:
-	void Run();
+	public:
+		void Run();
 
-protected:
-	virtual void RegisterEventCallback() {}
-	virtual void InitRender() {}
-	virtual void ReleaseRender() {}
-	virtual void Draw() {}
-	virtual void ProcessInput();
+	protected:
+		virtual void WindowProperty() {}
+		virtual void InitRender() {}
+		virtual void ReleaseRender() {}
+		virtual void PreDraw() {}
+		virtual void Draw() {}
+		virtual void ProcessInput();
 
-protected:
-	GLFWwindow* m_pWnd = nullptr;
-	const int WND_WIDTH = 800;
-	const int WND_HEIGHT = 600;
-	
-};
+	protected:
+		GLFWwindow* window = nullptr;
+		const int SCR_WIDTH = 800;
+		const int SCR_HEIGHT = 600;
 
+	};
+}

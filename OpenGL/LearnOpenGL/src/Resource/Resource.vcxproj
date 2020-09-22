@@ -174,12 +174,15 @@ xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Image Include="Image\awesomeface.png" />
     <Image Include="Image\container.jpg" />
     <Image Include="Image\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\3.3\shader.fs.glsl" />
     <None Include="Shader\3.3\shader.vs.glsl" />
+    <None Include="Shader\7.4\camera.fs.glsl" />
+    <None Include="Shader\7.4\camera.vs.glsl" />
     <None Include="Shader\Simple\simple.fs.glsl" />
     <None Include="Shader\Simple\simple.vs.glsl" />
   </ItemGroup>

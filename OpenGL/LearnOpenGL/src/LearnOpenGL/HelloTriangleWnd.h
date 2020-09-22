@@ -2,10 +2,10 @@
 
 #include "FrameWnd.h"
 
-class CHelloTriangleWnd : public CFrameWnd
+class CHelloTriangleWnd : public frm::CFrameWnd
 {
 private:
-	virtual void RegisterEventCallback() override;
+	virtual void WindowProperty() override;
 	virtual void Draw() override;
 	
 private:

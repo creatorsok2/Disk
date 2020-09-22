@@ -264,4 +264,45 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINER);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINER);
 ```
 
+## 텍스처 생성
+```cpp
+// Texture 생성
+unsigned int texture;
+glGenTextures(1, &texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+// Texture data
+int width, heigh, nrChannels;
+unsigned char * data = stbi_load("Resource\\Image\\container.jpg", &width, &heigh, &nrChannels, 0);
+if(data)
+{
+    // Texture Data 할당
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);    
+}
+stbi_image_free(data);
+
+// vertex buffer 에 texture coordinate 추가
+// vertex attribute 에 texture 속성 추가
+// shader 수정
+
+
+// sampler 에 속한 텍스처 단위는 한번만 설정하면 되므로 렌더링 루프에 들어가기 전에 작업을 수행
+ourShader.use();
+glActiveTexture(GL_TEXTURE0); // 사용할 텍스처 유닛을 전달
+glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0);
+glActiveTexture(GL_TEXTURE0 + 1);
+ourShader.setInt("texture2", 1); 
+
+// draw 
+glBindTexture(GL_TEXTURE_2D, texture);
+glBindVertexArray(vao);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+```
  

@@ -3,14 +3,14 @@
 #include "IncludeHeader.h"
 #include "FrameWnd.h"
 
-class CShaderWnd : public CFrameWnd
+class CShaderWnd : public frm::CFrameWnd
 {
 public:
 	CShaderWnd();
 	virtual ~CShaderWnd() = default;
 
 private:
-	virtual void RegisterEventCallback() override;
+	virtual void WindowProperty() override;
 	virtual void InitRender() override;
 	virtual void ReleaseRender() override;
 	virtual void Draw() override;

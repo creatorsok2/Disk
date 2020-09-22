@@ -33,6 +33,9 @@
     <ClCompile Include="FrameWnd.cpp">
       <Filter>Wnd\Base</Filter>
     </ClCompile>
+    <ClCompile Include="CameraWnd.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learnopengl\shader_s.h">
@@ -55,6 +58,15 @@
     </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\camera.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\shader_m.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraWnd.h">
+      <Filter>Wnd</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,11 +7,11 @@
     <Image Include="Image\container.jpg">
       <Filter>Image</Filter>
     </Image>
+    <Image Include="Image\awesomeface.png">
+      <Filter>Image</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Image">
-      <UniqueIdentifier>{cf54cdb4-57c3-487a-85da-d4c687245d57}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shader">
       <UniqueIdentifier>{abc0c302-6cb7-435f-8e7b-64df09fd7a6c}</UniqueIdentifier>
     </Filter>
@@ -20,6 +20,12 @@
     </Filter>
     <Filter Include="Shader\Simple">
       <UniqueIdentifier>{e327255d-b8f6-4f89-bd4d-744a7ae9ea7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\7.4">
+      <UniqueIdentifier>{93a608a9-bb8a-4d14-b3b1-472665ce735c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{cf54cdb4-57c3-487a-85da-d4c687245d57}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +40,12 @@
     </None>
     <None Include="Shader\Simple\simple.vs.glsl">
       <Filter>Shader\Simple</Filter>
+    </None>
+    <None Include="Shader\7.4\camera.vs.glsl">
+      <Filter>Shader\7.4</Filter>
+    </None>
+    <None Include="Shader\7.4\camera.fs.glsl">
+      <Filter>Shader\7.4</Filter>
     </None>
   </ItemGroup>
 </Project>
