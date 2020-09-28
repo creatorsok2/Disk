@@ -16,6 +16,7 @@ private:
 private:
 	void renderScene(const Shader &shader);
 	void renderCube();
+	void renderQuad();
 
 private:
 	// build and compile shaders
@@ -28,10 +29,16 @@ private:
 	// -------------
 	unsigned int m_woodTexture;// = loadTexture(FileSystem::getPath("resources/textures/wood.png").c_str());
 
+	unsigned int planeVAO;
+	unsigned int planeVBO;
+
 	unsigned int depthMapFBO;
-	unsigned int depthCubemap;
+	unsigned int depthMap;
 
 	unsigned int cubeVAO = 0;
 	unsigned int cubeVBO = 0;
+
+	unsigned int quadVAO = 0;
+	unsigned int quadVBO;
 };
 

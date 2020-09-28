@@ -1,58 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Main">
-      <UniqueIdentifier>{0acc3afa-34f1-4a55-ba5e-c4f3d67ab9ff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="__Library__">
       <UniqueIdentifier>{af28c1fd-2099-4055-86dd-7a81a32db787}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Wnd">
-      <UniqueIdentifier>{89110521-2f43-451e-a9ce-d912a7d7d94e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Wnd\Base">
-      <UniqueIdentifier>{d53acf9a-ee89-4ab8-b0ca-e985d353af4f}</UniqueIdentifier>
     </Filter>
     <Filter Include="__Util__">
       <UniqueIdentifier>{5dbae45e-1398-42ca-9c0d-c66fca677dfe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Example">
-      <UniqueIdentifier>{95ce5e6f-0191-4b02-bdb1-bb5ec1fca307}</UniqueIdentifier>
-    </Filter>
     <Filter Include="__Library__\include">
       <UniqueIdentifier>{1b9abde3-21a5-4d6f-b1c9-471899ad8c6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Example">
+      <UniqueIdentifier>{0acc3afa-34f1-4a55-ba5e-c4f3d67ab9ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\BaseFrame">
+      <UniqueIdentifier>{95ce5e6f-0191-4b02-bdb1-bb5ec1fca307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Wnd">
+      <UniqueIdentifier>{89110521-2f43-451e-a9ce-d912a7d7d94e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Wnd\Base">
+      <UniqueIdentifier>{d53acf9a-ee89-4ab8-b0ca-e985d353af4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="HelloTriangleWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="ShaderWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="FrameWnd.cpp">
-      <Filter>Wnd\Base</Filter>
+      <Filter>Example\Wnd\Base</Filter>
     </ClCompile>
     <ClCompile Include="CameraWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="LightingMapsWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="MultipleLightsWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="ProgramDirectory.cpp">
       <Filter>__Util__</Filter>
     </ClCompile>
     <ClCompile Include="ModelWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="ShadowWnd.cpp">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="learnopengl\image.cpp">
       <Filter>__Library__</Filter>
@@ -60,11 +57,12 @@
     <ClCompile Include="..\..\include\v141\GLAD\glad.c">
       <Filter>__Library__\include</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="GlfwShadow.cpp">
-      <Filter>Main\Example</Filter>
+      <Filter>Example</Filter>
     </ClCompile>
     <ClCompile Include="GlfwFrameWnd.cpp">
-      <Filter>Main\Example</Filter>
+      <Filter>Example\BaseFrame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,13 +70,13 @@
       <Filter>__Library__</Filter>
     </ClInclude>
     <ClInclude Include="HelloTriangleWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="ShaderWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="FrameWnd.h">
-      <Filter>Wnd\Base</Filter>
+      <Filter>Example\Wnd\Base</Filter>
     </ClInclude>
     <ClInclude Include="learnopengl\camera.h">
       <Filter>__Library__</Filter>
@@ -87,13 +85,13 @@
       <Filter>__Library__</Filter>
     </ClInclude>
     <ClInclude Include="CameraWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="LightingMapsWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="MultipleLightsWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="ProgramDirectory.h">
       <Filter>__Util__</Filter>
@@ -108,10 +106,10 @@
       <Filter>__Library__</Filter>
     </ClInclude>
     <ClInclude Include="ModelWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="ShadowWnd.h">
-      <Filter>Wnd</Filter>
+      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="learnopengl\image.h">
       <Filter>__Library__</Filter>
@@ -126,10 +124,10 @@
       <Filter>__Util__</Filter>
     </ClInclude>
     <ClInclude Include="GlfwShadow.h">
-      <Filter>Main\Example</Filter>
+      <Filter>Example</Filter>
     </ClInclude>
     <ClInclude Include="GlfwFrameWnd.h">
-      <Filter>Main\Example</Filter>
+      <Filter>Example\BaseFrame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
