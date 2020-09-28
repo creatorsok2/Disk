@@ -1,16 +1,16 @@
 #pragma once
 
-class CLoadImage
+class image
 {
 public:
-	static CLoadImage& GetInstance();
-	~CLoadImage();
+	static image& GetInstance();
+	~image();
 
 private:
-	CLoadImage();
+	image();
 
 public:
 	unsigned char * load(const char* path, int& width, int& height, int& nrChannels, int req_comp = 0);
-	void image_free(unsigned char * data);
+	void free(unsigned char * data);
 
 };

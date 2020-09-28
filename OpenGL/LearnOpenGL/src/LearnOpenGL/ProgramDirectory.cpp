@@ -1,4 +1,4 @@
-#include "IncludeHeader.h"
+#include "includeOgl.h"
 #include "ProgramDirectory.h"
 
 std::string CProgramDirectory::GetWorkingDirectory()

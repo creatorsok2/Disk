@@ -1,6 +1,8 @@
-#include "IncludeHeader.h"
+#include "includeOgl.h"
 #include "MultipleLightsWnd.h"
-#include "LoadImage.h"
+#include "learnopengl/image.h"
+
+#include <functional>
 
 // set up vertex data (and buffer(s)) and configure vertex attributes
    // ------------------------------------------------------------------
@@ -360,7 +362,7 @@ unsigned int CMultipleLightsWnd::loadTexture(const char * path)
 	glGenTextures(1, &textureID);
 
 	int width, height, nrComponents;
-	unsigned char *data = CLoadImage::GetInstance().load(path, width, height, nrComponents, 0);
+	unsigned char *data = image::GetInstance().load(path, width, height, nrComponents, 0);
 	if (data)
 	{
 		GLenum format = GL_RGB;
@@ -380,12 +382,12 @@ unsigned int CMultipleLightsWnd::loadTexture(const char * path)
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-		CLoadImage::GetInstance().image_free(data);
+		image::GetInstance().free(data);
 	}
 	else
 	{
 		std::cout << "Texture failed to load at path: " << path << std::endl;
-		CLoadImage::GetInstance().image_free(data);
+		image::GetInstance().free(data);
 	}
 
 	return textureID;

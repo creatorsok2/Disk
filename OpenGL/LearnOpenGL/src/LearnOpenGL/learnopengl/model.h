@@ -20,7 +20,7 @@
 #include <map>
 #include <vector>
 
-#include "../LoadImage.h"
+#include "image.h"
 
 using namespace std;
 
@@ -182,7 +182,7 @@ private:
 			glGenTextures(1, &textureID);
 
 			int width, height, nrComponents;
-			unsigned char *data = CLoadImage::GetInstance().load(filename.c_str(), width, height, nrComponents, 0);
+			unsigned char *data = image::GetInstance().load(filename.c_str(), width, height, nrComponents, 0);
 			if (data)
 			{
 				GLenum format = GL_RGB;
@@ -202,12 +202,12 @@ private:
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-				CLoadImage::GetInstance().image_free(data);
+				image::GetInstance().free(data);
 			}
 			else
 			{
 				std::cout << "Texture failed to load at path: " << path << std::endl;
-				CLoadImage::GetInstance().image_free(data);
+				image::GetInstance().free(data);
 			}
 
 			return textureID;

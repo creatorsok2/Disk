@@ -1,15 +1,12 @@
-#include "HelloTriangleWnd.h"
-#include "ShaderWnd.h"
-#include "CameraWnd.h"
-#include "LightingMapsWnd.h"
-#include "MultipleLightsWnd.h"
-#include "ModelWnd.h"
-#include "ShadowWnd.h"
+#include "IncludeOgl.h"
+#include "includeExample.h"
+#include "ProgramDirectory.h"
 
 int main()
 {
-	ShadowWnd wnd;
-	wnd.Run();
+	auto modulepath = CProgramDirectory::GetModuleDirectory();
+	SetCurrentDirectory(modulepath.c_str());
 
-	return 0;
+	GlfwShadow example;
+	return example.main();
 }

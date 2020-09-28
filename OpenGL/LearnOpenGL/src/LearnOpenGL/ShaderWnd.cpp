@@ -1,5 +1,7 @@
 #include "ShaderWnd.h"
 
+#include <functional>
+
 CShaderWnd::CShaderWnd()
 	// build and compile our shader program
 	// you can name your shader files however you like	

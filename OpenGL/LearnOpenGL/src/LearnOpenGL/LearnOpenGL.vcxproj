@@ -103,6 +103,10 @@
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(TargetDir)resources" md "$(TargetDir)resources"
+xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -122,6 +126,10 @@
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(TargetDir)resources" md "$(TargetDir)resources"
+xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -145,6 +153,10 @@
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(TargetDir)resources" md "$(TargetDir)resources"
+xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -168,17 +180,23 @@
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(TargetDir)resources" md "$(TargetDir)resources"
+xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\include\v141\GLAD\glad.c" />
     <ClCompile Include="CameraWnd.cpp" />
     <ClCompile Include="FrameWnd.cpp" />
+    <ClCompile Include="GlfwShadow.cpp" />
     <ClCompile Include="HelloTriangleWnd.cpp" />
+    <ClCompile Include="learnopengl\image.cpp" />
     <ClCompile Include="LightingMapsWnd.cpp" />
-    <ClCompile Include="LoadImage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelWnd.cpp" />
     <ClCompile Include="MultipleLightsWnd.cpp" />
+    <ClCompile Include="GlfwFrameWnd.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
     <ClCompile Include="ShaderWnd.cpp" />
     <ClCompile Include="ShadowWnd.cpp" />
@@ -186,22 +204,25 @@
   <ItemGroup>
     <ClInclude Include="CameraWnd.h" />
     <ClInclude Include="FrameWnd.h" />
+    <ClInclude Include="GlfwShadow.h" />
     <ClInclude Include="HelloTriangleWnd.h" />
-    <ClInclude Include="IncludeHeader.h" />
+    <ClInclude Include="includeExample.h" />
+    <ClInclude Include="IncludeOgl.h" />
     <ClInclude Include="learnopengl\camera.h" />
+    <ClInclude Include="learnopengl\image.h" />
     <ClInclude Include="learnopengl\mesh.h" />
     <ClInclude Include="learnopengl\model.h" />
     <ClInclude Include="learnopengl\shader.h" />
     <ClInclude Include="learnopengl\shader_m.h" />
     <ClInclude Include="learnopengl\shader_s.h" />
+    <ClInclude Include="learnopengl\stb_image.h" />
     <ClInclude Include="LightingMapsWnd.h" />
-    <ClInclude Include="LoadImage.h" />
     <ClInclude Include="ModelWnd.h" />
     <ClInclude Include="MultipleLightsWnd.h" />
+    <ClInclude Include="GlfwFrameWnd.h" />
     <ClInclude Include="ProgramDirectory.h" />
     <ClInclude Include="ShaderWnd.h" />
     <ClInclude Include="ShadowWnd.h" />
-    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

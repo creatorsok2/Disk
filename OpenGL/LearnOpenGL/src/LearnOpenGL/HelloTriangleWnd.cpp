@@ -1,20 +1,33 @@
 #pragma once
 
-#include "IncludeHeader.h"
+#include "includeOgl.h"
 #include "HelloTriangleWnd.h"
+
+#include <functional>
 
 void CHelloTriangleWnd::WindowProperty()
 {
 	assert(window != nullptr && "not defined window");
 
 	glfwSetWindowUserPointer(window, static_cast<void*>(this));
-	glfwSetFramebufferSizeCallback(window, [](GLFWwindow* pWnd, int width, int height)
+	//glfwSetFramebufferSizeCallback(window, [](GLFWwindow* pWnd, int width, int height)
+	//{
+	//	if (auto pFrameWnd = static_cast<CHelloTriangleWnd*>(glfwGetWindowUserPointer(pWnd)))
+	//	{
+	//		auto func = std::bind(&CHelloTriangleWnd::FrameBufferSizeCallback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+	//		func(pWnd, width, height);
+	//	}
+	//});
+
+	//using namespace std::placeholders; // for `_1`
+	glfwSetFramebufferSizeCallback(window, (GLFWframebuffersizefun)[](GLFWwindow* pWnd, int width, int height)
 	{
+
 		if (auto pFrameWnd = static_cast<CHelloTriangleWnd*>(glfwGetWindowUserPointer(pWnd)))
 		{
 			auto func = std::bind(&CHelloTriangleWnd::FrameBufferSizeCallback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
 			func(pWnd, width, height);
-		}			
+		}
 	});
 }
 

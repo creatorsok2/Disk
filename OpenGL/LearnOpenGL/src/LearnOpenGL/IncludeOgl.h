@@ -1,8 +1,6 @@
 #pragma once
 
 #include <Windows.h>
-#include <assert.h>
-#include <functional>
 
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
@@ -15,9 +13,8 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-#include "learnopengl/shader_m.h"
-#include "learnopengl/camera.h"
+#include "learnopengl/image.h"
+#include "learnopengl/shader.h"
 #include "learnopengl/model.h"
-
-//#define STB_IMAGE_IMPLEMENTATION
-//#include "stb_image.h"
+#include "learnopengl/mesh.h"
+#include "learnopengl/camera.h"

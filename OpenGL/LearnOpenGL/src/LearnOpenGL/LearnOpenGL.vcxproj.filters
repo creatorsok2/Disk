@@ -16,13 +16,16 @@
     <Filter Include="__Util__">
       <UniqueIdentifier>{5dbae45e-1398-42ca-9c0d-c66fca677dfe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Example">
+      <UniqueIdentifier>{95ce5e6f-0191-4b02-bdb1-bb5ec1fca307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__Library__\include">
+      <UniqueIdentifier>{1b9abde3-21a5-4d6f-b1c9-471899ad8c6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\include\v141\GLAD\glad.c">
-      <Filter>__Library__</Filter>
     </ClCompile>
     <ClCompile Include="HelloTriangleWnd.cpp">
       <Filter>Wnd</Filter>
@@ -45,14 +48,23 @@
     <ClCompile Include="ProgramDirectory.cpp">
       <Filter>__Util__</Filter>
     </ClCompile>
-    <ClCompile Include="LoadImage.cpp">
-      <Filter>__Util__</Filter>
-    </ClCompile>
     <ClCompile Include="ModelWnd.cpp">
       <Filter>Wnd</Filter>
     </ClCompile>
     <ClCompile Include="ShadowWnd.cpp">
       <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="learnopengl\image.cpp">
+      <Filter>__Library__</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\v141\GLAD\glad.c">
+      <Filter>__Library__\include</Filter>
+    </ClCompile>
+    <ClCompile Include="GlfwShadow.cpp">
+      <Filter>Main\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="GlfwFrameWnd.cpp">
+      <Filter>Main\Example</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,9 +79,6 @@
     </ClInclude>
     <ClInclude Include="FrameWnd.h">
       <Filter>Wnd\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>__Library__</Filter>
     </ClInclude>
     <ClInclude Include="learnopengl\camera.h">
       <Filter>__Library__</Filter>
@@ -89,12 +98,6 @@
     <ClInclude Include="ProgramDirectory.h">
       <Filter>__Util__</Filter>
     </ClInclude>
-    <ClInclude Include="LoadImage.h">
-      <Filter>__Util__</Filter>
-    </ClInclude>
-    <ClInclude Include="IncludeHeader.h">
-      <Filter>__Util__</Filter>
-    </ClInclude>
     <ClInclude Include="learnopengl\shader.h">
       <Filter>__Library__</Filter>
     </ClInclude>
@@ -109,6 +112,24 @@
     </ClInclude>
     <ClInclude Include="ShadowWnd.h">
       <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\image.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\stb_image.h">
+      <Filter>__Library__</Filter>
+    </ClInclude>
+    <ClInclude Include="IncludeOgl.h">
+      <Filter>__Util__</Filter>
+    </ClInclude>
+    <ClInclude Include="includeExample.h">
+      <Filter>__Util__</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwShadow.h">
+      <Filter>Main\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwFrameWnd.h">
+      <Filter>Main\Example</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

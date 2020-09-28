@@ -1,6 +1,8 @@
-#include "IncludeHeader.h"
+#include "includeOgl.h"
 #include "CameraWnd.h"
-#include "LoadImage.h"
+#include "learnopengl/image.h"
+
+#include <functional>
 
 // set up vertex data (and buffer(s)) and configure vertex attributes
 // ------------------------------------------------------------------
@@ -148,7 +150,7 @@ void CCameraWnd::InitRender()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	// load image, create texture and generate mipmaps
 	int width, height, nrChannels;
-	unsigned char *data = CLoadImage::GetInstance().load("Resource/Image/container.jpg", width, height, nrChannels, 0);
+	unsigned char *data = image::GetInstance().load("Resource/Image/container.jpg", width, height, nrChannels, 0);
 	if (data)
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -158,7 +160,7 @@ void CCameraWnd::InitRender()
 	{
 		std::cout << "Failed to load texture" << std::endl;
 	}
-	CLoadImage::GetInstance().image_free(data);
+	image::GetInstance().free(data);
 	// texture 2
 	// ---------
 	glGenTextures(1, &texture2);
@@ -170,7 +172,7 @@ void CCameraWnd::InitRender()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	// load image, create texture and generate mipmaps
-	data = CLoadImage::GetInstance().load("Resource/Image/awesomeface.png", width, height, nrChannels, 0);
+	data = image::GetInstance().load("Resource/Image/awesomeface.png", width, height, nrChannels, 0);
 	if (data)
 	{
 		// note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
@@ -181,7 +183,7 @@ void CCameraWnd::InitRender()
 	{
 		std::cout << "Failed to load texture" << std::endl;
 	}
-	CLoadImage::GetInstance().image_free(data);
+	image::GetInstance().free(data);
 
 	// tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
 	// -------------------------------------------------------------------------------------------

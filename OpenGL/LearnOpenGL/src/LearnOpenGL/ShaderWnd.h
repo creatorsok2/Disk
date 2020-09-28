@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IncludeHeader.h"
+#include "includeOgl.h"
 #include "FrameWnd.h"
 
 class CShaderWnd : public frm::CFrameWnd

@@ -1,6 +1,8 @@
-#include "IncludeHeader.h"
+#include "includeOgl.h"
 #include "ModelWnd.h"
 #include "LightingMapsWnd.h"
+
+#include <functional>
 
 CModelWnd::CModelWnd()
 	: ourShader("Resource/Shader/1/model_loading.vs.glsl", "Resource/Shader/1/model_loading.fs.glsl")
