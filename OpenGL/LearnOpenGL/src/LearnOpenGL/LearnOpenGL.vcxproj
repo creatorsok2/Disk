@@ -181,6 +181,7 @@
     <ClCompile Include="MultipleLightsWnd.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
     <ClCompile Include="ShaderWnd.cpp" />
+    <ClCompile Include="ShadowWnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraWnd.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="MultipleLightsWnd.h" />
     <ClInclude Include="ProgramDirectory.h" />
     <ClInclude Include="ShaderWnd.h" />
+    <ClInclude Include="ShadowWnd.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

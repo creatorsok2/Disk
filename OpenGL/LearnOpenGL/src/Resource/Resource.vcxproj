@@ -178,11 +178,18 @@ xcopy "$(ProjectDir)*.bmp" "$(TargetDir)Resource\*.bmp" /s /e /d /y</Command>
     <Image Include="Image\container.jpg" />
     <Image Include="Image\container2.png" />
     <Image Include="Image\container2_specular.png" />
+    <Image Include="Image\marble.jpg" />
+    <Image Include="Image\metal.png" />
     <Image Include="Image\wall.jpg" />
+    <Image Include="Image\wood.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\1\model_loading.fs.glsl" />
     <None Include="Shader\1\model_loading.vs.glsl" />
+    <None Include="Shader\3.1.1\debug_quad.vs.glsl" />
+    <None Include="Shader\3.1.1\debug_quad_depth.fs.glsl" />
+    <None Include="Shader\3.1.1\shadow_mapping_depth.fs.glsl" />
+    <None Include="Shader\3.1.1\shadow_mapping_depth.vs.glsl" />
     <None Include="Shader\3.3\shader.fs.glsl" />
     <None Include="Shader\3.3\shader.vs.glsl" />
     <None Include="Shader\4.2\lighting_maps.fs.glsl" />

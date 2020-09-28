@@ -51,6 +51,9 @@
     <ClCompile Include="ModelWnd.cpp">
       <Filter>Wnd</Filter>
     </ClCompile>
+    <ClCompile Include="ShadowWnd.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learnopengl\shader_s.h">
@@ -102,6 +105,9 @@
       <Filter>__Library__</Filter>
     </ClInclude>
     <ClInclude Include="ModelWnd.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowWnd.h">
       <Filter>Wnd</Filter>
     </ClInclude>
   </ItemGroup>

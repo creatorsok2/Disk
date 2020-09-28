@@ -16,6 +16,15 @@
     <Image Include="Image\container2_specular.png">
       <Filter>Image</Filter>
     </Image>
+    <Image Include="Image\marble.jpg">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Image\metal.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Image\wood.png">
+      <Filter>Image</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shader">
@@ -41,6 +50,9 @@
     </Filter>
     <Filter Include="Shader\1">
       <UniqueIdentifier>{96b56b6c-3a3e-48c2-8caa-a08e12e3927a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\3.1.1">
+      <UniqueIdentifier>{93cd073e-93cf-4ae0-9e1b-fd154d339915}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +103,18 @@
     </None>
     <None Include="Shader\1\model_loading.fs.glsl">
       <Filter>Shader\1</Filter>
+    </None>
+    <None Include="Shader\3.1.1\shadow_mapping_depth.vs.glsl">
+      <Filter>Shader\3.1.1</Filter>
+    </None>
+    <None Include="Shader\3.1.1\shadow_mapping_depth.fs.glsl">
+      <Filter>Shader\3.1.1</Filter>
+    </None>
+    <None Include="Shader\3.1.1\debug_quad.vs.glsl">
+      <Filter>Shader\3.1.1</Filter>
+    </None>
+    <None Include="Shader\3.1.1\debug_quad_depth.fs.glsl">
+      <Filter>Shader\3.1.1</Filter>
     </None>
   </ItemGroup>
 </Project>
