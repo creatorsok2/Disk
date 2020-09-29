@@ -190,10 +190,11 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClCompile Include="FrameWnd.cpp" />
     <ClCompile Include="GlfwCamera.cpp" />
     <ClCompile Include="GlfwHelloTriangle.cpp" />
+    <ClCompile Include="GlfwLightingMaps.cpp" />
+    <ClCompile Include="GlfwMultipleLights.cpp" />
     <ClCompile Include="GlfwShaders.cpp" />
     <ClCompile Include="GlfwShadows.cpp" />
     <ClCompile Include="learnopengl\image.cpp" />
-    <ClCompile Include="LightingMapsWnd.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelWnd.cpp" />
     <ClCompile Include="MultipleLightsWnd.cpp" />
@@ -205,6 +206,8 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClInclude Include="FrameWnd.h" />
     <ClInclude Include="GlfwCamera.h" />
     <ClInclude Include="GlfwHelloTriangle.h" />
+    <ClInclude Include="GlfwLightingMaps.h" />
+    <ClInclude Include="GlfwMultipleLights.h" />
     <ClInclude Include="GlfwShaders.h" />
     <ClInclude Include="GlfwShadows.h" />
     <ClInclude Include="includeExample.h" />
@@ -217,7 +220,6 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClInclude Include="learnopengl\shader_m.h" />
     <ClInclude Include="learnopengl\shader_s.h" />
     <ClInclude Include="learnopengl\stb_image.h" />
-    <ClInclude Include="LightingMapsWnd.h" />
     <ClInclude Include="ModelWnd.h" />
     <ClInclude Include="MultipleLightsWnd.h" />
     <ClInclude Include="GlfwFrame.h" />

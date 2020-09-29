@@ -1,6 +1,5 @@
 #include "includeOgl.h"
 #include "ModelWnd.h"
-#include "LightingMapsWnd.h"
 
 #include <functional>
 

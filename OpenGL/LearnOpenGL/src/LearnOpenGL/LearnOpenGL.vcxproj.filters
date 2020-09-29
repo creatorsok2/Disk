@@ -37,13 +37,25 @@
     <Filter Include="01. Getting started\Camera">
       <UniqueIdentifier>{d3010b95-531c-4ac3-8a29-ad876b974705}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Lighting">
+      <UniqueIdentifier>{2e55ecd0-6487-43cb-baac-f3f21fa89718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Model Loading">
+      <UniqueIdentifier>{5f722185-e3ce-4aa8-a06d-452d2afb840c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. PBR">
+      <UniqueIdentifier>{5cf8dc5b-8c89-4231-acd4-2f2699995b67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Lighting\Lighting Maps">
+      <UniqueIdentifier>{6eb09039-34ea-49cb-91b3-611ad93f8258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Lighting\Multiple Lights">
+      <UniqueIdentifier>{0d0d0dcd-6551-41f9-81b9-576e31dbe770}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FrameWnd.cpp">
       <Filter>Example\Wnd\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="LightingMapsWnd.cpp">
-      <Filter>Example\Wnd</Filter>
     </ClCompile>
     <ClCompile Include="MultipleLightsWnd.cpp">
       <Filter>Example\Wnd</Filter>
@@ -79,6 +91,12 @@
     <ClCompile Include="GlfwCamera.cpp">
       <Filter>01. Getting started\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="GlfwLightingMaps.cpp">
+      <Filter>02. Lighting\Lighting Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="GlfwMultipleLights.cpp">
+      <Filter>02. Lighting\Multiple Lights</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learnopengl\shader_s.h">
@@ -92,9 +110,6 @@
     </ClInclude>
     <ClInclude Include="learnopengl\shader_m.h">
       <Filter>__Library__</Filter>
-    </ClInclude>
-    <ClInclude Include="LightingMapsWnd.h">
-      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="MultipleLightsWnd.h">
       <Filter>Example\Wnd</Filter>
@@ -132,17 +147,19 @@
     <ClInclude Include="GlfwShadows.h">
       <Filter>04. Advanced Lighting\Shadows</Filter>
     </ClInclude>
-    <ClInclude Include="IncludeOgl.h">
-      <Filter>00. Base</Filter>
-    </ClInclude>
     <ClInclude Include="ProgramDirectory.h">
-      <Filter>00. Base</Filter>
-    </ClInclude>
-    <ClInclude Include="includeExample.h">
       <Filter>00. Base</Filter>
     </ClInclude>
     <ClInclude Include="GlfwCamera.h">
       <Filter>01. Getting started\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="GlfwLightingMaps.h">
+      <Filter>02. Lighting\Lighting Maps</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwMultipleLights.h">
+      <Filter>02. Lighting\Multiple Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="includeExample.h" />
+    <ClInclude Include="IncludeOgl.h" />
   </ItemGroup>
 </Project>

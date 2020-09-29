@@ -7,6 +7,6 @@ int main()
 	auto modulepath = CProgramDirectory::GetModuleDirectory();
 	SetCurrentDirectory(modulepath.c_str());
 
-	GlfwCamera example;
+	GlfwLightingMaps example;
 	return example.main();
 }

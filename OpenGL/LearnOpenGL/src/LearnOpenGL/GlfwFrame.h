@@ -1,6 +1,6 @@
 #pragma once
 
-#include "learnopengl/shader_m.h"
+#include "learnopengl/shader.h"
 #include "learnopengl/camera.h"
 #include "learnopengl/model.h"
 
