@@ -187,8 +187,8 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\include\v141\GLAD\glad.c" />
-    <ClCompile Include="CameraWnd.cpp" />
     <ClCompile Include="FrameWnd.cpp" />
+    <ClCompile Include="GlfwCamera.cpp" />
     <ClCompile Include="GlfwHelloTriangle.cpp" />
     <ClCompile Include="GlfwShaders.cpp" />
     <ClCompile Include="GlfwShadows.cpp" />
@@ -199,12 +199,11 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClCompile Include="MultipleLightsWnd.cpp" />
     <ClCompile Include="GlfwFrame.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
-    <ClCompile Include="ShaderWnd.cpp" />
     <ClCompile Include="ShadowWnd.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CameraWnd.h" />
     <ClInclude Include="FrameWnd.h" />
+    <ClInclude Include="GlfwCamera.h" />
     <ClInclude Include="GlfwHelloTriangle.h" />
     <ClInclude Include="GlfwShaders.h" />
     <ClInclude Include="GlfwShadows.h" />
@@ -223,7 +222,6 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClInclude Include="MultipleLightsWnd.h" />
     <ClInclude Include="GlfwFrame.h" />
     <ClInclude Include="ProgramDirectory.h" />
-    <ClInclude Include="ShaderWnd.h" />
     <ClInclude Include="ShadowWnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

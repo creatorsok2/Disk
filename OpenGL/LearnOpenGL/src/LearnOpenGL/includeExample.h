@@ -7,6 +7,7 @@
 
 #include "GlfwHelloTriangle.h"
 #include "GlfwShaders.h"
+#include "GlfwCamera.h"
 
 //////////////////////////////////////////////////////////////////////////
 // Advanced Lighting
