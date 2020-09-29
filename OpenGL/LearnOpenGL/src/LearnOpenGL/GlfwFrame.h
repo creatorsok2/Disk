@@ -8,11 +8,11 @@ struct GLFWwindow;
 
 namespace ogl
 {
-	class GlfwFrameWnd
+	class GlfwFrame
 	{
 	public:
-		GlfwFrameWnd();
-		virtual ~GlfwFrameWnd();
+		GlfwFrame();
+		virtual ~GlfwFrame();
 
 	public:
 		int main();

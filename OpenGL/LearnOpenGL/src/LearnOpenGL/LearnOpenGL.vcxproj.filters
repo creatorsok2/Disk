@@ -22,11 +22,23 @@
     <Filter Include="Example\Wnd\Base">
       <UniqueIdentifier>{d53acf9a-ee89-4ab8-b0ca-e985d353af4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Example\Getting started">
+      <UniqueIdentifier>{0a9ccd74-a322-4e0f-8b09-c9ed1a4e255b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Getting started\Hello Triangle">
+      <UniqueIdentifier>{9693561f-7595-4144-adf8-aea56843719e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Getting started\Shaders">
+      <UniqueIdentifier>{37aba1ab-d266-474f-9ca4-181102e05fd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Advanced Lighting">
+      <UniqueIdentifier>{b444daf6-7fac-40bd-aa9d-8f47cddb2990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Example\Advanced Lighting\Shadows">
+      <UniqueIdentifier>{16aba9a3-2cae-4588-ab6d-3ec898bb1241}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HelloTriangleWnd.cpp">
-      <Filter>Example\Wnd</Filter>
-    </ClCompile>
     <ClCompile Include="ShaderWnd.cpp">
       <Filter>Example\Wnd</Filter>
     </ClCompile>
@@ -58,19 +70,22 @@
       <Filter>__Library__\include</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="GlfwShadow.cpp">
-      <Filter>Example</Filter>
+    <ClCompile Include="GlfwHelloTriangle.cpp">
+      <Filter>Example\Getting started\Hello Triangle</Filter>
     </ClCompile>
-    <ClCompile Include="GlfwFrameWnd.cpp">
+    <ClCompile Include="GlfwFrame.cpp">
       <Filter>Example\BaseFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="GlfwShaders.cpp">
+      <Filter>Example\Getting started\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="GlfwShadows.cpp">
+      <Filter>Example\Advanced Lighting\Shadows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learnopengl\shader_s.h">
       <Filter>__Library__</Filter>
-    </ClInclude>
-    <ClInclude Include="HelloTriangleWnd.h">
-      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="ShaderWnd.h">
       <Filter>Example\Wnd</Filter>
@@ -120,14 +135,18 @@
     <ClInclude Include="IncludeOgl.h">
       <Filter>__Util__</Filter>
     </ClInclude>
-    <ClInclude Include="includeExample.h">
-      <Filter>__Util__</Filter>
+    <ClInclude Include="GlfwHelloTriangle.h">
+      <Filter>Example\Getting started\Hello Triangle</Filter>
     </ClInclude>
-    <ClInclude Include="GlfwShadow.h">
-      <Filter>Example</Filter>
-    </ClInclude>
-    <ClInclude Include="GlfwFrameWnd.h">
+    <ClInclude Include="includeExample.h" />
+    <ClInclude Include="GlfwFrame.h">
       <Filter>Example\BaseFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwShaders.h">
+      <Filter>Example\Getting started\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwShadows.h">
+      <Filter>Example\Advanced Lighting\Shadows</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

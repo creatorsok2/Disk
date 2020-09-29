@@ -1,19 +1,19 @@
 #include "IncludeOgl.h"
-#include "GlfwShadow.h"
+#include "GlfwShadows.h"
 
-GlfwShadow::GlfwShadow()
-	: m_shader("resources/shaders/3.1.3.shadow_mapping.vs", "resources/shaders/3.1.3.shadow_mapping.fs")
-	, m_simpleDepthShader("resources/shaders/3.1.3.shadow_mapping_depth.vs", "resources/shaders/3.1.3.shadow_mapping_depth.fs")
-	, m_debugDepthQuad("resources/shaders/3.1.3.debug_quad.vs", "resources/shaders/3.1.3.debug_quad_depth.fs")
+GlfwShadows::GlfwShadows()
+	: m_shader("resources/shaders/3.1.3.shadow_mapping.vs.glsl", "resources/shaders/3.1.3.shadow_mapping.fs.glsl")
+	, m_simpleDepthShader("resources/shaders/3.1.3.shadow_mapping_depth.vs.glsl", "resources/shaders/3.1.3.shadow_mapping_depth.fs.glsl")
+	, m_debugDepthQuad("resources/shaders/3.1.3.debug_quad.vs.glsl", "resources/shaders/3.1.3.debug_quad_depth.fs.glsl")
 {
 	m_woodTexture = loadTexture("resources/textures/wood.png");
 }
 
-GlfwShadow::~GlfwShadow()
+GlfwShadows::~GlfwShadows()
 {
 }
 
-void GlfwShadow::build()
+void GlfwShadows::build()
 {
 	// configure global opengl state
 	// -----------------------------
@@ -85,7 +85,7 @@ void GlfwShadow::build()
 	lightPos = glm::vec3(-2.0f, 4.0f, -1.0f);
 }
 
-void GlfwShadow::draw()
+void GlfwShadows::draw()
 {
 	// change light position over time
 		//lightPos.x = sin(glfwGetTime()) * 3.0f;
@@ -151,13 +151,13 @@ void GlfwShadow::draw()
 	//renderQuad();
 }
 
-void GlfwShadow::release()
+void GlfwShadows::release()
 {
 }
 
 // renders the 3D scene
 // --------------------
-void GlfwShadow::renderScene(const Shader & shader)
+void GlfwShadows::renderScene(const Shader & shader)
 {
 	// floor
 	glm::mat4 model = glm::mat4(1.0f);
@@ -185,7 +185,7 @@ void GlfwShadow::renderScene(const Shader & shader)
 
 // renderCube() renders a 1x1 3D cube in NDC.
 // -------------------------------------------------
-void GlfwShadow::renderCube()
+void GlfwShadows::renderCube()
 {
 	// initialize (if necessary)
 	if (cubeVAO == 0)
@@ -256,7 +256,7 @@ void GlfwShadow::renderCube()
 	glBindVertexArray(0);
 }
 
-void GlfwShadow::renderQuad()
+void GlfwShadows::renderQuad()
 {
 	if (quadVAO == 0)
 	{

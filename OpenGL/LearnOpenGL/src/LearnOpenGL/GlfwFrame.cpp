@@ -1,9 +1,9 @@
 #include "IncludeOgl.h"
-#include "GlfwFrameWnd.h"
+#include "GlfwFrame.h"
 
 #include <functional>
 
-ogl::GlfwFrameWnd::GlfwFrameWnd()
+ogl::GlfwFrame::GlfwFrame()
 	: camera(glm::vec3(0.0f, 0.0f, 3.0f))
 {
 	// camera
@@ -21,14 +21,14 @@ ogl::GlfwFrameWnd::GlfwFrameWnd()
 	create_window();
 }
 
-ogl::GlfwFrameWnd::~GlfwFrameWnd()
+ogl::GlfwFrame::~GlfwFrame()
 {
 	/* glfw terminated, clearning all previously allocated GLFW resources. */
 
 	glfwTerminate();
 }
 
-int ogl::GlfwFrameWnd::main()
+int ogl::GlfwFrame::main()
 {
 	build();
 
@@ -51,7 +51,7 @@ int ogl::GlfwFrameWnd::main()
 	return 0;
 }
 
-void ogl::GlfwFrameWnd::create_window()
+void ogl::GlfwFrame::create_window()
 {
 	/* glfw initialize and configue */
 
@@ -78,27 +78,27 @@ void ogl::GlfwFrameWnd::create_window()
 	glfwSetWindowUserPointer(m_window, this);
 	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height)
 	{
-		if (auto pFrameWnd = static_cast<GlfwFrameWnd*>(glfwGetWindowUserPointer(window)))
+		if (auto pFrameWnd = static_cast<GlfwFrame*>(glfwGetWindowUserPointer(window)))
 		{
-			auto func = std::bind(&GlfwFrameWnd::framebuffer_size_callback, pFrameWnd, ::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+			auto func = std::bind(&GlfwFrame::framebuffer_size_callback, pFrameWnd, ::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
 			func(window, width, height);
 		}
 	});
 
 	glfwSetCursorPosCallback(m_window, [](GLFWwindow * window, double xpos, double ypos)
 	{
-		if (auto pFrameWnd = static_cast<GlfwFrameWnd*>(glfwGetWindowUserPointer(window)))
+		if (auto pFrameWnd = static_cast<GlfwFrame*>(glfwGetWindowUserPointer(window)))
 		{
-			auto func = std::bind(&GlfwFrameWnd::mouse_callback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+			auto func = std::bind(&GlfwFrame::mouse_callback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
 			func(window, xpos, ypos);
 		}
 	});
 
 	glfwSetScrollCallback(m_window, [](GLFWwindow * window, double xoffset, double yoffset)
 	{
-		if (auto pFrameWnd = static_cast<GlfwFrameWnd*>(glfwGetWindowUserPointer(window)))
+		if (auto pFrameWnd = static_cast<GlfwFrame*>(glfwGetWindowUserPointer(window)))
 		{
-			auto func = std::bind(&GlfwFrameWnd::scroll_callback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+			auto func = std::bind(&GlfwFrame::scroll_callback, pFrameWnd, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
 			func(window, xoffset, yoffset);
 		}
 	});
@@ -112,7 +112,7 @@ void ogl::GlfwFrameWnd::create_window()
 	assert(res && "Failed to initialize GLAD");
 }
 
-void ogl::GlfwFrameWnd::before_draw()
+void ogl::GlfwFrame::before_draw()
 {
 	// per-frame time logic
 	// --------------------
@@ -123,7 +123,7 @@ void ogl::GlfwFrameWnd::before_draw()
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void ogl::GlfwFrameWnd::processInput(GLFWwindow * window)
+void ogl::GlfwFrame::processInput(GLFWwindow * window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
@@ -150,7 +150,7 @@ void ogl::GlfwFrameWnd::processInput(GLFWwindow * window)
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
-void ogl::GlfwFrameWnd::framebuffer_size_callback(GLFWwindow *, int width, int height)
+void ogl::GlfwFrame::framebuffer_size_callback(GLFWwindow *, int width, int height)
 {
 	// make sure the viewport matches the new window dimensions; note that width and 
 	// height will be significantly larger than specified on retina displays.
@@ -159,7 +159,7 @@ void ogl::GlfwFrameWnd::framebuffer_size_callback(GLFWwindow *, int width, int h
 
 // glfw: whenever the mouse moves, this callback is called
 // -------------------------------------------------------
-void ogl::GlfwFrameWnd::mouse_callback(GLFWwindow *, double xpos, double ypos)
+void ogl::GlfwFrame::mouse_callback(GLFWwindow *, double xpos, double ypos)
 {
 	if (firstMouse)
 	{
@@ -179,14 +179,14 @@ void ogl::GlfwFrameWnd::mouse_callback(GLFWwindow *, double xpos, double ypos)
 
 // glfw: whenever the mouse scroll wheel scrolls, this callback is called
 // ----------------------------------------------------------------------
-void ogl::GlfwFrameWnd::scroll_callback(GLFWwindow *, double, double yoffset)
+void ogl::GlfwFrame::scroll_callback(GLFWwindow *, double, double yoffset)
 {
 	camera.ProcessMouseScroll(static_cast<float>(yoffset));
 }
 
 // utility function for loading a 2D texture from file
 // ---------------------------------------------------
-unsigned int ogl::GlfwFrameWnd::loadTexture(const char * path)
+unsigned int ogl::GlfwFrame::loadTexture(const char * path)
 {
 	unsigned int textureID;
 	glGenTextures(1, &textureID);

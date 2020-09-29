@@ -1,12 +1,12 @@
 #pragma once
 
-#include "GlfwFrameWnd.h"
+#include "GlfwFrame.h"
 
-class GlfwShadow : public ogl::GlfwFrameWnd
+class GlfwShadows : public ogl::GlfwFrame
 {
 public:
-	GlfwShadow();
-	virtual ~GlfwShadow();
+	GlfwShadows();
+	virtual ~GlfwShadows();
 
 private:
 	virtual void build();

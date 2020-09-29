@@ -149,7 +149,7 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>../../bin/$(PlatformToolset)/$(configuration)/$(PlatformTarget)/$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;assimp-vc141-mt.lib%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;assimp-vc141-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -176,7 +176,7 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>../../bin/$(PlatformToolset)/$(configuration)/$(PlatformTarget)/$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;assimp-vc141-mt.lib%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;assimp-vc141-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -189,14 +189,15 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClCompile Include="..\..\include\v141\GLAD\glad.c" />
     <ClCompile Include="CameraWnd.cpp" />
     <ClCompile Include="FrameWnd.cpp" />
-    <ClCompile Include="GlfwShadow.cpp" />
-    <ClCompile Include="HelloTriangleWnd.cpp" />
+    <ClCompile Include="GlfwHelloTriangle.cpp" />
+    <ClCompile Include="GlfwShaders.cpp" />
+    <ClCompile Include="GlfwShadows.cpp" />
     <ClCompile Include="learnopengl\image.cpp" />
     <ClCompile Include="LightingMapsWnd.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelWnd.cpp" />
     <ClCompile Include="MultipleLightsWnd.cpp" />
-    <ClCompile Include="GlfwFrameWnd.cpp" />
+    <ClCompile Include="GlfwFrame.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
     <ClCompile Include="ShaderWnd.cpp" />
     <ClCompile Include="ShadowWnd.cpp" />
@@ -204,8 +205,9 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
   <ItemGroup>
     <ClInclude Include="CameraWnd.h" />
     <ClInclude Include="FrameWnd.h" />
-    <ClInclude Include="GlfwShadow.h" />
-    <ClInclude Include="HelloTriangleWnd.h" />
+    <ClInclude Include="GlfwHelloTriangle.h" />
+    <ClInclude Include="GlfwShaders.h" />
+    <ClInclude Include="GlfwShadows.h" />
     <ClInclude Include="includeExample.h" />
     <ClInclude Include="IncludeOgl.h" />
     <ClInclude Include="learnopengl\camera.h" />
@@ -219,7 +221,7 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClInclude Include="LightingMapsWnd.h" />
     <ClInclude Include="ModelWnd.h" />
     <ClInclude Include="MultipleLightsWnd.h" />
-    <ClInclude Include="GlfwFrameWnd.h" />
+    <ClInclude Include="GlfwFrame.h" />
     <ClInclude Include="ProgramDirectory.h" />
     <ClInclude Include="ShaderWnd.h" />
     <ClInclude Include="ShadowWnd.h" />
