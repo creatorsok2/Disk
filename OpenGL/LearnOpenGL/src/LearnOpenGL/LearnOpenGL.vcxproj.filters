@@ -57,9 +57,6 @@
     <ClCompile Include="FrameWnd.cpp">
       <Filter>Example\Wnd\Base</Filter>
     </ClCompile>
-    <ClCompile Include="MultipleLightsWnd.cpp">
-      <Filter>Example\Wnd</Filter>
-    </ClCompile>
     <ClCompile Include="ModelWnd.cpp">
       <Filter>Example\Wnd</Filter>
     </ClCompile>
@@ -110,9 +107,6 @@
     </ClInclude>
     <ClInclude Include="learnopengl\shader_m.h">
       <Filter>__Library__</Filter>
-    </ClInclude>
-    <ClInclude Include="MultipleLightsWnd.h">
-      <Filter>Example\Wnd</Filter>
     </ClInclude>
     <ClInclude Include="learnopengl\shader.h">
       <Filter>__Library__</Filter>

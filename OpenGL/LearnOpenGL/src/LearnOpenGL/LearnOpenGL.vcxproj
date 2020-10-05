@@ -197,7 +197,6 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClCompile Include="learnopengl\image.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelWnd.cpp" />
-    <ClCompile Include="MultipleLightsWnd.cpp" />
     <ClCompile Include="GlfwFrame.cpp" />
     <ClCompile Include="ProgramDirectory.cpp" />
     <ClCompile Include="ShadowWnd.cpp" />
@@ -221,7 +220,6 @@ xcopy "$(SolutionDir)..\resources\*.*" "$(TargetDir)resources\*.*" /s /e /d /y</
     <ClInclude Include="learnopengl\shader_s.h" />
     <ClInclude Include="learnopengl\stb_image.h" />
     <ClInclude Include="ModelWnd.h" />
-    <ClInclude Include="MultipleLightsWnd.h" />
     <ClInclude Include="GlfwFrame.h" />
     <ClInclude Include="ProgramDirectory.h" />
     <ClInclude Include="ShadowWnd.h" />
