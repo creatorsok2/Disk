@@ -329,4 +329,29 @@ glStencilMask(0xFF); // each bit is written to the stencil buffer as is
 glStencilMask(0x00); // each bit ends up as 0 in the stencil buffer (disabling writes)
 ```
 
-glStencilFunc
+# Shadow 
+## Ambient Occlusion (AO)
+- 렌더링 과정 중에 셰이딩의 한 방식이며, 각각의 표면이 광원에 얼마나 노출되어 있는지를 계산하여 그림자를 더해주는 기술이다. (차폐영역을 더 어둡게 만드는 기술)
+- 일반적으로 광원과 물체를 던져놓고 __지역조명__ 방식으로 처리를 시행하면 그림자는 있지만 실제와 미묘하게 다른데 AO는 이를 보정하고 실제에 더 가깝게 보이도록 만든다. 
+- __지역조명이란__ 색을 입이고 후처리로 음영을 입힘
+
+## AO 의 종류
+### ssao (screen space ambient occlusion)
+- 가장 많이 사용되는 ao. 현재 렌더링되어 있는 영역만을 screen space 로 인식하여 해당 영역만을 ambient occlusion 을 적용함으로써 일정 수준 최적화된 그래픽을 제공한다. 
+
+### HBAO+ (horizon based ambient occlusion +)
+- NVidia 가 제공하는 기술. 최근들어 쓰이는 차세대 ao. ssao 보다 좀더 높은 연산 능력을 필요로 하지만 그림자의 정확성을 좀더 높인다. 
+
+## shadow mapping 
+- 그림자는 acclusion 에 의해 빛이 없는 영역이다. 
+
+## bias
+- depth map 과 scene 의 해상도 오차로 인해서 shadow acne 이 발생할 수 있는데, 이때 작은 offset 값을 이용하여 surface depth 를 표면보다 높게 할당하면 그림자가 올바로 출력될 수 있다. 여기서 작은 offset 값을 bias 라고 한다. 
+- shadow acne 은 lightDir 과 normal 의 angle 이 커질수록 잘 발생된다. 그렇기 때문에 각도에 따라서 bias 값을 조절하여 퀄리티가 놓은 shadow 를 생성할 수 있다. 
+```glsl
+float fBias = max(0.005, 0.005 * (1.0 - dot(normal, lightDir)));
+float fShadow = fCurrentDepth - fBias > fClosestDepth ? 1.0f : 0.0f;
+```
+
+## PCF (percentage-closer filtering)
+- 주변 pixel 에 해당하는 값을 이용하여 shadow 의 값을 조절하는 기법을 의미한다.

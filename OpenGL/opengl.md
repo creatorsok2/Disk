@@ -8,3 +8,9 @@
 ## Opengl Sample Code
 - [Sample Code](https://github.com/g-truc/ogl-samples)
 
+# keyword
+## Albedo 
+- 반사율 또는 알베도(Albedo)는 물체가 빛을 받았을때 반사하는 정도를 나타내는 단위이다.
+
+## 입사각, 반사각 
+![angle](Image/angleOfIncidence.png)
