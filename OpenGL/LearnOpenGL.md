@@ -34,6 +34,7 @@ void main()
 
 ```glsl
 // Fragment Shader
+
 #version 330 core
 out vec4 FragColor;
 
@@ -41,7 +42,6 @@ void main()
 {
     FragColor = vec4(1.0f, 0.0f, 0.0f, 1.0f); // Red Color 
 }
-
 ```
 
 ## Shader Compile : 셰이더 컴파일
@@ -164,6 +164,7 @@ std::cout << "Maximum nr of vertex attributes supported : " << nrAttributes << s
 ## in, out
 ```glsl 
 // Vertex Shader 
+
 #version 330 core
 layout (location = 0) in vec3 aPos; // attribute position 0
 out vec4 vertexColor; // specify a color output to the fragment shader
@@ -177,6 +178,7 @@ void main()
 
 ```glsl
 // Fragment Shader
+
 #version 330 core
 out vec4 FragColor;
 
@@ -195,6 +197,7 @@ void main()
 
 ```glsl
 // Fragment Shader
+
 #version 330 core
 out vec4 FragColor;
 
