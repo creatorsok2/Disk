@@ -16,6 +16,9 @@
 ## tangent, bitangent 유도식 
 - [normal vector](https://blog.naver.com/lifeisforu/80117400047)
 
+## opengl 설명
+- [opengl guide](http://reader.epubee.com/books/mobile/49/4908007a001f4861b408203da916ff2a/text00001.html#title)
+
 # keyword
 
 ## albedo 
